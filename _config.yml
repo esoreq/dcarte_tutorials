@@ -1,0 +1,62 @@
+# Book settings
+title: DCARTE_TUTORIALS 
+author: Eyal Soreq
+logo: images/logo.jpg
+copyright: ""
+exclude_patterns: ["LICENSE.md", "README.md"]
+only_build_toc_files: true
+
+bibtex_bibfiles:
+  - about/citations.bib
+
+latex:
+  latex_documents:
+    targetname: book.tex
+html:
+  home_page_in_navbar : true
+  use_repository_button: true
+  use_issues_button: true
+  use_edit_page_button: true
+  navbar_number_sections : false
+  baseurl : "https://esoreq.github.io/DCARTE_TUTORIALS/"  # The base URL where your book will be hosted. 
+  comments:
+    hypothesis: false
+    utterances:
+    repo: 
+    dokieli: false
+  extra_footer : |
+      <div>
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://licensebuttons.net/l/by-nc-sa/3.0/88x31.png"></a>
+          All content on this site (unless otherwise specified) is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 license</a>
+      </div>
+
+launch_buttons:
+  notebook_interface : "jupyterlab"
+  binderhub_url      : "https://mybinder.org"
+  thebe              : true
+
+repository: 
+  url          : https://esoreq.github.io/DCARTE_TUTORIALS/
+  path_to_book : ""
+  branch       : master
+
+sphinx:
+  config:
+    html_show_copyright: false
+    html_extra_path: ['files']
+    bibtex_reference_style: author_year
+    myst_enable_extensions: 
+    - amsmath
+    - colon_fence
+    - deflist
+    - dollarmath
+    - html_image
+    - linkify
+    - replacements
+    - substitution
+
+    myst_substitutions:
+      INSTRUCTOR: "Dr. Eyal Soreq (he/his/him)"
+      PRONOUNCE: "ee-yaal So-rek"
+      PHONE: "N/A"
+      COURSE_CODE: "DCARTE_TUTORIALS"
