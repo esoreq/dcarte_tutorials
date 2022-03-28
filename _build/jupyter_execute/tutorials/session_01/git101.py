@@ -254,7 +254,7 @@
 # git reset && git status
 # ```
 # 
-# #### Step 4 - add .gitignore to the repo root 
+# ### Step 4 - add .gitignore to the repo root 
 # Before moving forward, it is handy to exclude specific folders and types of files from the cloud. In projects involving sensitive data, like UKDRI-CRT, excluding sensitive files is particularly important. Having some data locally is beneficial in terms of processing speed and ease of use, but sharing this data (especially in healthcare) to the public domain is a severe violation of IG protocols. Creating and populating the hidden *.gitignore* file is a simple way to exclude any data files from being uploaded into the cloud. 
 # 
 # ```{admonition} Challenge
@@ -270,7 +270,7 @@
 # Tmp/" > .gitignore
 # ```
 # 
-# #### Step 5 - Add all files with the new .gitignore exclusion criteria
+# ### Step 5 - Add all files with the new .gitignore exclusion criteria
 # Now that we protected ourselves, we can use git add all without any worry.
 # 
 # ```{code-block} bash
@@ -278,7 +278,7 @@
 # ```
 # As you can see, only files in the authorised directories are uploaded to the staging area, and when we go online to our new Github repo, we can see that the files have been successfully added to the cloud.
 # 
-# #### Step 6 - What about pushing branches to the cloud? 
+# ### Step 6 - What about pushing branches to the cloud? 
 # Working using branches can simplify the process of collaborating on projects with numerous persons working on similar overlapping aims.
 # For example, research may examine the same patient group to create distinct markers from the same data. 
 # In this case, we would have a single repository for the project because all of the base scripts are used to analyse the data, but higher branches would take alternative approaches to the processed data. The project leaders may eventually wish to combine these various branches into a standard updated repo (which is beyond the scope of this tutorial, but you can get the gist of what needs to be done).
@@ -287,7 +287,7 @@
 # git push origin my_new_branch_name
 # ```
 # 
-# #### Step 7 - Cloning a repo to your local storage 
+# ### Step 7 - Cloning a repo to your local storage 
 # To work on your source code, you need a location to store it locally, but how can you get the contents of your remote repository into your local storage? 
 # Here comes Cloning. Cloning generates a repository clone with a link back to the original. 
 # Each repository can only pull, retrieve, and push back. 
