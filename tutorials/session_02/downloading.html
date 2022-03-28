@@ -1,0 +1,460 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Downloading data with dcarte &#8212; DCARTE_TUTORIALS</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/extra.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pdf_print.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom_layouts.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/myadmonition.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/save_state.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://esoreq.github.io/DCARTE_TUTORIALS/tutorials/session_02/downloading.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Derived datasets" href="derived.html" />
+    <link rel="prev" title="Configuration" href="configure.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">DCARTE_TUTORIALS</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../about/intro.html">
+   some intro stuff about me
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../session_01/overview.html">
+   Session 01 - basics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../session_01/bash101.html">
+     Introduction to Linux Based Command Line Interactions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../session_01/anaconda101.html">
+     Anaconda environment 101
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../session_01/git101.html">
+     Version control, git and github command line tools
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="overview.html">
+   Session 02 - Ingesting UKDRI CRT Data
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="configure.html">
+     Configuration
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Downloading data with dcarte
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="derived.html">
+     Derived datasets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="recipes.html">
+     Developing a recipe of your own
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/tutorials/session_02/downloading.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://esoreq.github.io/DCARTE_TUTORIALS/"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://esoreq.github.io/DCARTE_TUTORIALS//issues/new?title=Issue%20on%20page%20%2Ftutorials/session_02/downloading.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/esoreq.github.io/DCARTE_TUTORIALS/edit/master/tutorials/session_02/downloading.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#context">
+   Context
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#downloading-a-predifined-slice-of-a-dataset">
+   Downloading a predifined slice of a dataset
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#loading-a-local-dataset">
+   Loading a local dataset
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#updating-a-dataset-to-the-present-time">
+   Updating a dataset to the present time
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reloading-a-dataset">
+   Reloading a dataset
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Downloading data with dcarte</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#context">
+   Context
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#downloading-a-predifined-slice-of-a-dataset">
+   Downloading a predifined slice of a dataset
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#loading-a-local-dataset">
+   Loading a local dataset
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#updating-a-dataset-to-the-present-time">
+   Updating a dataset to the present time
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reloading-a-dataset">
+   Reloading a dataset
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <!-- # Ingesting UKDRI CRT Data with the DCARTE -->
+<div class="section" id="downloading-data-with-dcarte">
+<h1>Downloading data with dcarte<a class="headerlink" href="#downloading-data-with-dcarte" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="context">
+<h2>Context<a class="headerlink" href="#context" title="Permalink to this headline">¶</a></h2>
+<p>As stated before, the core functionality of dcarte lies in providing continuous access to the ongoing datasets collected by the UKDRI-CRT center.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">domains()</span></code> command returns a data frame containing all of the datasets locally stored on your computer, allowing you to inspect the various datasets natively accessible in dcarte. Column headers represent domains, and any names in those columns represent datasets within that domain.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dcarte</span><span class="o">.</span><span class="n">domains</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><img alt="" src="../../_images/figure-01.png" /></p>
+<p>To load any dataset with dcarte, pass two arguments to the load function: the dataset name and the dataset domain.
+Loading appliance activity information, for example, can be obtained using the following line of code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">appliances</span> <span class="o">=</span> <span class="n">dcarte</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;appliances&#39;</span><span class="p">,</span><span class="s1">&#39;raw&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="" src="../../_images/figure-02.png" /></p>
+<p>Under the hood, dcarte will connect to the minder research site and request the raw appliances dataset predefined in dcarte. Once the request has been processed, the dataset will be downloaded to your local computer and will be ready to be utilised immediately after. In the code above, we define a variable called <code class="docutils literal notranslate"><span class="pre">appliances</span></code> and load a Pandas Dataframe containing the information stored in the minder research portal into it.</p>
+<p>It is important to note, that the DataFrame object contains many functions that simplify the common data analytics needs. While it is beyond the scope of this tutorial to cover all the functionalities of Pandas, I will cover some of the central ones. For example the <code class="docutils literal notranslate"><span class="pre">info</span></code> method prints out information about a DataFrame.
+Try running the <code class="docutils literal notranslate"><span class="pre">appliances.info()</span></code> command and see if you get a similar output to the one plotted here.</p>
+<p><img alt="" src="../../_images/figure-03.png" /></p>
+<p>Running the <code class="docutils literal notranslate"><span class="pre">head</span></code> or <code class="docutils literal notranslate"><span class="pre">tail</span></code> methods returns a printout of the first or last five rows of the DataFrame, respectively.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">appliances</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><img alt="" src="../../_images/figure-04.png" /></p>
+</div>
+<div class="section" id="downloading-a-predifined-slice-of-a-dataset">
+<h2>Downloading a predifined slice of a dataset<a class="headerlink" href="#downloading-a-predifined-slice-of-a-dataset" title="Permalink to this headline">¶</a></h2>
+<p>The majority of the data offered by dcarte is time-related, often known as time-series tabular datasets. As a result, whenever you call dcarte, you are explicitly establishing a timeframe using the <code class="docutils literal notranslate"><span class="pre">since</span></code> and <code class="docutils literal notranslate"><span class="pre">until</span></code> arguments. The earliest time is by default 2019-04-01, and the latest time is the moment the command was issued, which is programmed as ‘now()’ throughout multiple datetime libereries. But these are adjustable for example running the command below will download a slice of the PIR activity data from 2021-04-01 and until 2021-08-01.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">vital_signs</span> <span class="o">=</span> <span class="n">dcarte</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;Vital_Signs&#39;</span><span class="p">,</span><span class="s1">&#39;raw&#39;</span><span class="p">,</span><span class="n">since</span><span class="o">=</span><span class="s1">&#39;2021-04-01&#39;</span><span class="p">,</span><span class="n">until</span><span class="o">=</span><span class="s1">&#39;2021-08-01&#39;</span><span class="p">,</span><span class="n">reload</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>As you can see, although having nearly the same number of observations, this dataset takes longer to download. This is because dcarte is combining data from 10 distinct sources beneath the hood, each of which represents a different metric. Using the information we presented before, try to compute the precise number of observations.</p>
+<p>Using the <code class="docutils literal notranslate"><span class="pre">agg</span></code> method we can test the dataset duration and examine the number of observations in one line.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">vital_signs</span><span class="o">.</span><span class="n">start_date</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="s1">&#39;min&#39;</span><span class="p">,</span><span class="s1">&#39;max&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="loading-a-local-dataset">
+<h2>Loading a local dataset<a class="headerlink" href="#loading-a-local-dataset" title="Permalink to this headline">¶</a></h2>
+<p>One of the primary motivations for developing dcarte was to reduce the pre-processing time required to investigate a dataset. Consequently, dcarte saves a local snapshot of any previously used dataset and loads that snapshot instead of reloading the web dataset. This can be easily demonstrated by reloading the same dataset we just downloaded using the followig line of code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">vital_signs</span> <span class="o">=</span> <span class="n">dcarte</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;vital_signs&#39;</span><span class="p">,</span><span class="s1">&#39;raw&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>As you can see, this dataset loads several hundred times faster than it did during the initial download.</p>
+</div>
+<div class="section" id="updating-a-dataset-to-the-present-time">
+<h2>Updating a dataset to the present time<a class="headerlink" href="#updating-a-dataset-to-the-present-time" title="Permalink to this headline">¶</a></h2>
+<p>The flexibility to update raw and derived datasets to reflect the ongoing nature of our cohort is one of the most valuable features of dcarte. This is acheived using the <code class="docutils literal notranslate"><span class="pre">update</span></code> argument. Using the same example we will now update the activity dataset to the most recent snapshot.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">vital_signs_updated</span> <span class="o">=</span> <span class="n">dcarte</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;vital_signs&#39;</span><span class="p">,</span><span class="s1">&#39;raw&#39;</span><span class="p">,</span><span class="n">update</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Rerun the previously introduced <code class="docutils literal notranslate"><span class="pre">agg</span></code> function and compare the outputs before and after the update request.</p>
+</div>
+<div class="section" id="reloading-a-dataset">
+<h2>Reloading a dataset<a class="headerlink" href="#reloading-a-dataset" title="Permalink to this headline">¶</a></h2>
+<p>Importantly, when you update a dataset, the arguments you gave when you originally downloaded or updated it will be reflected.
+When the source dataset changes, the dataset must be downloaded again; this is easily performed by using the <code class="docutils literal notranslate"><span class="pre">reload</span></code> argument.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">vital_signs_updated</span> <span class="o">=</span> <span class="n">dcarte</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;vital_signs&#39;</span><span class="p">,</span><span class="s1">&#39;raw&#39;</span><span class="p">,</span><span class="n">reload</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">until</span><span class="o">=</span><span class="s1">&#39;2021-09-01&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Rerun the <code class="docutils literal notranslate"><span class="pre">agg</span></code> function to observe the differences between the different arguments.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./tutorials/session_02"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="configure.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Configuration</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="derived.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Derived datasets</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Eyal Soreq<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
