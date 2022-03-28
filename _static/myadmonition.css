@@ -18,14 +18,3 @@
 }
 
 
-.code-block {
-    margin: 0;
-    padding: 5px;
-    list-style: none;
-    background: #000000;
-    color: #dfffd3;
-    font: 0.8em 'Andale Mono', Consolas, 'Courier New';
-    line-height: 1.6em;
-    border-bottom-right-radius: 3px;
-    border-bottom-left-radius: 3px;
-}

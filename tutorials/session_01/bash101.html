@@ -419,8 +419,8 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#advance-bash">
-   Advance Bash
+  <a class="reference internal nav-link" href="#advanced-bash">
+   Advanced Bash
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -746,8 +746,8 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#advance-bash">
-   Advance Bash
+  <a class="reference internal nav-link" href="#advanced-bash">
+   Advanced Bash
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -988,8 +988,11 @@ Please type the following command in the prompt.<div class="summary-down docutil
 </div>
 <div class="section" id="list-folder-structure">
 <h3>list folder structure<a class="headerlink" href="#list-folder-structure" title="Permalink to this headline">¶</a></h3>
-<p>In order to confirm, we could use wildcards like <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">sandbox/*/*/*</span></code> where each astrix corresponds to a different level in the hierarchy folder we created. However, there is a good chance that one of the many options of the <code class="docutils literal notranslate"><span class="pre">ls</span></code> command might be able to solve this problem in a generic way.
-```{admonition} Try to use the <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">--help</span></code> to figure out what option is the most sutiable.</p>
+<p>In order to confirm, we could use wildcards like <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">sandbox/*/*/*</span></code> where each astrix corresponds to a different level in the hierarchy folder we created. However, there is a good chance that one of the many options of the <code class="docutils literal notranslate"><span class="pre">ls</span></code> command might be able to solve this problem in a generic way.</p>
+<div class="admonition-challenge admonition">
+<p class="admonition-title">Challenge</p>
+<p>Try to use the <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">--help</span></code> to figure out what option is the most suitable.</p>
+</div>
 <details class="sphinx-bs dropdown card mb-3">
 <summary class="summary-title card-header">
 Solution<div class="summary-down docutils">
@@ -1091,8 +1094,7 @@ Examples using ‘cd’ and ‘#’<div class="summary-down docutils">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> / <span class="c1"># change directory to the root directory</span>
 <span class="nb">cd</span> ~ <span class="c1"># change directory to your home directory</span>
 <span class="nb">cd</span> ~/sandbox/My_first_project/Report <span class="c1"># goto Report dir</span>
-<span class="nb">cd</span> <span class="s2">&quot;dir name&quot;</span>
-<span class="c1"># if for some reason you created a folder name with spaces</span>
+<span class="nb">cd</span> <span class="s2">&quot;dir name&quot;</span><span class="c1"># if for some reason you created a folder name with spaces</span>
 <span class="c1"># (DONT!!!) this is how you call it</span>
 </pre></div>
 </div>
@@ -1201,7 +1203,7 @@ chmod <span class="nv">u</span><span class="o">=</span>rwx,g<span class="o">=</s
 </div>
 <details class="sphinx-bs dropdown card mb-3">
 <summary class="summary-title card-header">
-My explenation<div class="summary-down docutils">
+My explanation<div class="summary-down docutils">
 <svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
 <div class="summary-up docutils">
 <svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
@@ -1210,8 +1212,8 @@ My explenation<div class="summary-down docutils">
 </div>
 </details></div>
 </div>
-<div class="section" id="advance-bash">
-<h2>Advance Bash<a class="headerlink" href="#advance-bash" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="advanced-bash">
+<h2>Advanced Bash<a class="headerlink" href="#advanced-bash" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="alias">
 <h3>Alias<a class="headerlink" href="#alias" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
@@ -1219,10 +1221,10 @@ My explenation<div class="summary-down docutils">
 <li><p>They can be used to avoid typing long commands or to correct incorrect input.</p></li>
 <li><p>It can reduce keystrokes for common patterns and increase efficiency.</p></li>
 <li><p>Consider using it for complex commands with frequently used options, or even simple commands with commonly used options.</p></li>
-<li><p>The format is simple and this is a good opertunity to share with you some cool examples of using ls</p></li>
+<li><p>The format is simple and this is a good opportunity to share with you some cool examples of using ls</p></li>
 </ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">alias</span> <span class="nv">ls</span><span class="o">=</span><span class="s1">&#39;ls -h --color&#39;</span>
-<span class="nb">alias</span> <span class="nv">ll</span><span class="o">=</span><span class="s2">&quot;ls -lv --group-directories-first&quot;</span>
+<span class="nb">alias</span> <span class="nv">ll</span><span class="o">=</span><span class="s2">&quot;ls -lv&quot;</span>
 <span class="nb">alias</span> <span class="nv">lm</span><span class="o">=</span><span class="s1">&#39;ll | more&#39;</span> <span class="c1"># Pipe through &#39;more&#39;</span>
 <span class="nb">alias</span> <span class="nv">lr</span><span class="o">=</span><span class="s1">&#39;ll -R&#39;</span> <span class="c1"># Recursive ls.</span>
 <span class="nb">alias</span> <span class="nv">la</span><span class="o">=</span><span class="s1">&#39;ll -A&#39;</span> <span class="c1"># Show hidden files.</span>
@@ -1303,7 +1305,7 @@ cp <span class="o">[</span>OPTION<span class="o">]</span> Source-1 Source-2 Sour
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~/sandbox <span class="c1"># make sure we are at sandbox</span>
 <span class="nv">output</span><span class="o">=</span>dir_root/dir_branch/dir_leaf
 <span class="c1"># make a variable to store path</span>
-mkdir -p <span class="nv">$output</span> <span class="c1"># varify that output exists and if not create it</span>
+mkdir -p <span class="nv">$output</span> <span class="c1"># verify that output exists and if not create it</span>
 mkdir -p dir_root/dir_branch2
 <span class="c1"># Create  another branch in dir_root</span>
 cp file <span class="nv">$output</span> <span class="c1"># copy file to path</span>
@@ -1390,7 +1392,7 @@ mcd my_new_folder
 </div>
 <div class="section" id="links-to-expand-your-understanding">
 <h2>Links to expand your understanding<a class="headerlink" href="#links-to-expand-your-understanding" title="Permalink to this headline">¶</a></h2>
-<p>While pursuing a PhD, you should always strive to refresh, clarify, and expand your knowledge. Here are some links to support you in that:</p>
+<p>As a scientist in a data-infested field, your knowledge should always be refreshed, clarified, and expanded. Here are some links to support you in that:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://learn.datacamp.com/courses/introduction-to-shell">introduction-to-shell</a></p></li>
 <li><p><a class="reference external" href="https://learn.datacamp.com/courses/introduction-to-bash-scripting">Introduction to Bash Scripting</a></p></li>
