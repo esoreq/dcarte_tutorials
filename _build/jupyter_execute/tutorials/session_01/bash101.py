@@ -97,12 +97,17 @@
 # 
 
 # ### list folder structure
-# In order to confirm, we could use wildcards like `ls sandbox/*/*/*` where each astrix corresponds to a different level in the hierarchy folder we created. However, there is a good chance that one of the many options of the `ls` command might be able to solve this problem in a generic way.
-# ```{admonition} Try to use the `ls --help` to figure out what option is the most sutiable.
+# In order to confirm, we could use wildcards like `ls sandbox/*/*/*` where each astrix corresponds to a different level in the hierarchy folder we created. However, there is a good chance that one of the many options of the `ls` command might be able to solve this problem in a generic way.  
+# 
+# ```{admonition} Challenge
+# Try to use the `ls --help` to figure out what option is the most suitable.
+# ```
+# 
 # ```{dropdown} Solution
 # ```{code-block} console
 # ls -R sandbox/
 # ```
+# 
 # Here we state the root folder to start listing from, and then use the recursive  option to list all subdirectories recursively to the prompt.
 
 # ### Removing a directory 
@@ -164,8 +169,7 @@
 # cd / # change directory to the root directory
 # cd ~ # change directory to your home directory
 # cd ~/sandbox/My_first_project/Report # goto Report dir
-# cd "dir name"
-# # if for some reason you created a folder name with spaces
+# cd "dir name"# if for some reason you created a folder name with spaces
 # # (DONT!!!) this is how you call it
 # ```
 
@@ -241,21 +245,21 @@
 # cd $ORIGIN
 # ```
 # 
-# ```{dropdown} My explenation
+# ```{dropdown} My explanation
 # Here we create a variable named `ORIGIN` which represents our starting position, so we can go to other places, such as our home directory, run a program there, and eventually return to our origin.
 # ```
 
-# ## Advance Bash
+# ## Advanced Bash
 # ### Alias
 # - Shell aliases are used to reference a command. 
 # - They can be used to avoid typing long commands or to correct incorrect input. 
 # - It can reduce keystrokes for common patterns and increase efficiency. 
 # - Consider using it for complex commands with frequently used options, or even simple commands with commonly used options.
-# - The format is simple and this is a good opertunity to share with you some cool examples of using ls 
+# - The format is simple and this is a good opportunity to share with you some cool examples of using ls 
 # 
 # ```{code-block} bash
 # alias ls='ls -h --color'
-# alias ll="ls -lv --group-directories-first"
+# alias ll="ls -lv"
 # alias lm='ll | more' # Pipe through 'more'
 # alias lr='ll -R' # Recursive ls.
 # alias la='ll -A' # Show hidden files.
@@ -335,7 +339,7 @@
 # cd ~/sandbox # make sure we are at sandbox
 # output=dir_root/dir_branch/dir_leaf
 # # make a variable to store path
-# mkdir -p $output # varify that output exists and if not create it
+# mkdir -p $output # verify that output exists and if not create it
 # mkdir -p dir_root/dir_branch2
 # # Create  another branch in dir_root
 # cp file $output # copy file to path
@@ -424,7 +428,7 @@
 
 # ## Links to expand your understanding 
 # 
-# While pursuing a PhD, you should always strive to refresh, clarify, and expand your knowledge. Here are some links to support you in that: 
+# As a scientist in a data-infested field, your knowledge should always be refreshed, clarified, and expanded. Here are some links to support you in that: 
 # 
 # - [introduction-to-shell](https://learn.datacamp.com/courses/introduction-to-shell)
 # - [Introduction to Bash Scripting](https://learn.datacamp.com/courses/introduction-to-bash-scripting)
