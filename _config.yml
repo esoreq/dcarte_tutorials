@@ -1,9 +1,9 @@
 # Book settings
 title: DCARTE_TUTORIALS 
 author: Eyal Soreq
-logo: images/logo.jpg
-copyright: ""
-exclude_patterns: ["LICENSE.md", "README.md"]
+logo: images/logo.png
+execute:
+  execute_notebooks: force
 only_build_toc_files: true
 
 bibtex_bibfiles:
@@ -21,19 +21,14 @@ html:
   baseurl : "https://esoreq.github.io/DCARTE_TUTORIALS/"  # The base URL where your book will be hosted. 
   comments:
     hypothesis: false
-    utterances:
-    repo: 
+    utterances: false
+    repo: false
     dokieli: false
-  extra_footer : |
-      <div>
-      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://licensebuttons.net/l/by-nc-sa/3.0/88x31.png"></a>
-          All content on this site (unless otherwise specified) is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 license</a>
-      </div>
-
-launch_buttons:
-  notebook_interface : "jupyterlab"
-  binderhub_url      : "https://mybinder.org"
-  thebe              : true
+  # extra_footer : |
+  #     <div>
+  #     <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://licensebuttons.net/l/by-nc-sa/3.0/88x31.png"></a>
+  #         All content on this site (unless otherwise specified) is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 license</a>
+  #     </div>
 
 repository: 
   url          : https://esoreq.github.io/DCARTE_TUTORIALS/
@@ -42,7 +37,7 @@ repository:
 
 sphinx:
   config:
-    html_show_copyright: false
+    html_show_copyright: true
     html_extra_path: ['files']
     bibtex_reference_style: author_year
     myst_enable_extensions: 
@@ -55,8 +50,3 @@ sphinx:
     - replacements
     - substitution
 
-    myst_substitutions:
-      INSTRUCTOR: "Dr. Eyal Soreq (he/his/him)"
-      PRONOUNCE: "ee-yaal So-rek"
-      PHONE: "N/A"
-      COURSE_CODE: "DCARTE_TUTORIALS"

@@ -1,0 +1,1146 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Version control, git and github command line tools &#8212; DCARTE_TUTORIALS</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/extra.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pdf_print.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom_layouts.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/myadmonition.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/save_state.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://esoreq.github.io/DCARTE_TUTORIALS/tutorials/session_01/git101.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Anaconda environment 101" href="anaconda101.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">DCARTE_TUTORIALS</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../about/intro.html">
+   some intro stuff about me
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="overview.html">
+   Session 01 - basics
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="bash101.html">
+     Introduction to Linux Based Command Line Interactions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="anaconda101.html">
+     Anaconda environment 101
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Version control, git and github command line tools
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/tutorials/session_01/git101.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://esoreq.github.io/DCARTE_TUTORIALS/"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://esoreq.github.io/DCARTE_TUTORIALS//issues/new?title=Issue%20on%20page%20%2Ftutorials/session_01/git101.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/esoreq.github.io/DCARTE_TUTORIALS/edit/master/tutorials/session_01/git101.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic-terminolgy">
+   Basic terminolgy
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-version-control">
+     what is version control
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#why-do-we-need-to-use-version-control-when-we-code">
+       Why do we need to use version control when we code?
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-git">
+     What is git
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-github">
+     What is GitHub
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-a-repository">
+     What is a repository
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-if-good-for">
+     What is if good for
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#why-command-line-tools">
+     Why command line tools
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#context-and-practicalities">
+   Context and practicalities
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#setup">
+     Setup
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#install-git-and-create-a-github-account">
+       Install git and create a GitHub account
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#varify-that-git-is-installed-on-your-computer">
+         Varify that git is installed on your computer
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#install-the-command-line-tools">
+       Install the command line tools
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#if-you-don-t-have-a-github-user-account">
+       If you don’t have a GitHub user account -
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-your-first-repo">
+     Create your first repo
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#step-1-create-a-folder-to-hold-your-repo">
+       Step 1 - create a folder to hold your repo
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#step-2-create-some-basic-content">
+       Step 2 - create some basic content
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#step-3-initialize-the-repository-using-git">
+       Step 3 - initialize the repository using git
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#step-3a-look-under-the-hood">
+       Step 3a - look under the hood
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#step-4-add-readme-to-the-repo">
+       Step 4 - Add README to the repo
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#step-5-commit-changes-to-the-repo">
+       Step 5 - commit changes to the repo
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#step-6-branches-creation">
+       Step 6 - Branches creation
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#to-identify-the-active-branch-use">
+         To identify the active branch use:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#to-switch-between-branches-use-git-checkout-branch-name">
+         To switch between branches use
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           git
+          </span>
+          <span class="pre">
+           checkout
+          </span>
+          <span class="pre">
+           &lt;branch
+          </span>
+          <span class="pre">
+           name&gt;
+          </span>
+         </code>
+         :
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#to-merge-two-local-branches-use-git-merge-non-active-branch-name">
+         To merge two local branches use
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           git
+          </span>
+          <span class="pre">
+           merge
+          </span>
+          <span class="pre">
+           &lt;non
+          </span>
+          <span class="pre">
+           active
+          </span>
+          <span class="pre">
+           branch
+          </span>
+          <span class="pre">
+           name&gt;
+          </span>
+         </code>
+         :
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#moving-to-the-cloud">
+   Moving to the cloud
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-1-we-ll-use-the-command-line-tools-we-installed-earlier-to-upload-our-local-repository-to-our-github-account">
+     Step 1 - We’ll use the command line tools we installed earlier to upload our local repository to our github account.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-2-push-the-contents-of-you-new-repo-online">
+     Step 2 - Push the contents of you new repo online
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-3-adding-multiple-files">
+     Step 3 - Adding multiple files
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#create-a-complex-folder-structure-in-one-line-of-code">
+       create a complex folder structure in one line of code
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#populate-the-folder-with-some-fake-data">
+       populate the folder with some fake data
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#test-add-all-again">
+       Test add –all again
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#roll-back-all-files-to-unstaged-status">
+       Roll back all files to unstaged status
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#step-4-add-gitignore-to-the-repo-root">
+       Step 4 - add .gitignore to the repo root
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#step-5-add-all-files-with-the-new-gitignore-exclusion-criteria">
+       Step 5 - Add all files with the new .gitignore exclusion criteria
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#step-6-what-about-pushing-branches-to-the-cloud">
+       Step 6 - What about pushing branches to the cloud?
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#step-7-cloning-a-repo-to-your-local-storage">
+       Step 7 - Cloning a repo to your local storage
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Version control, git and github command line tools</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic-terminolgy">
+   Basic terminolgy
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-version-control">
+     what is version control
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#why-do-we-need-to-use-version-control-when-we-code">
+       Why do we need to use version control when we code?
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-git">
+     What is git
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-github">
+     What is GitHub
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-a-repository">
+     What is a repository
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-if-good-for">
+     What is if good for
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#why-command-line-tools">
+     Why command line tools
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#context-and-practicalities">
+   Context and practicalities
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#setup">
+     Setup
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#install-git-and-create-a-github-account">
+       Install git and create a GitHub account
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#varify-that-git-is-installed-on-your-computer">
+         Varify that git is installed on your computer
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#install-the-command-line-tools">
+       Install the command line tools
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#if-you-don-t-have-a-github-user-account">
+       If you don’t have a GitHub user account -
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-your-first-repo">
+     Create your first repo
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#step-1-create-a-folder-to-hold-your-repo">
+       Step 1 - create a folder to hold your repo
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#step-2-create-some-basic-content">
+       Step 2 - create some basic content
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#step-3-initialize-the-repository-using-git">
+       Step 3 - initialize the repository using git
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#step-3a-look-under-the-hood">
+       Step 3a - look under the hood
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#step-4-add-readme-to-the-repo">
+       Step 4 - Add README to the repo
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#step-5-commit-changes-to-the-repo">
+       Step 5 - commit changes to the repo
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#step-6-branches-creation">
+       Step 6 - Branches creation
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#to-identify-the-active-branch-use">
+         To identify the active branch use:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#to-switch-between-branches-use-git-checkout-branch-name">
+         To switch between branches use
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           git
+          </span>
+          <span class="pre">
+           checkout
+          </span>
+          <span class="pre">
+           &lt;branch
+          </span>
+          <span class="pre">
+           name&gt;
+          </span>
+         </code>
+         :
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#to-merge-two-local-branches-use-git-merge-non-active-branch-name">
+         To merge two local branches use
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           git
+          </span>
+          <span class="pre">
+           merge
+          </span>
+          <span class="pre">
+           &lt;non
+          </span>
+          <span class="pre">
+           active
+          </span>
+          <span class="pre">
+           branch
+          </span>
+          <span class="pre">
+           name&gt;
+          </span>
+         </code>
+         :
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#moving-to-the-cloud">
+   Moving to the cloud
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-1-we-ll-use-the-command-line-tools-we-installed-earlier-to-upload-our-local-repository-to-our-github-account">
+     Step 1 - We’ll use the command line tools we installed earlier to upload our local repository to our github account.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-2-push-the-contents-of-you-new-repo-online">
+     Step 2 - Push the contents of you new repo online
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-3-adding-multiple-files">
+     Step 3 - Adding multiple files
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#create-a-complex-folder-structure-in-one-line-of-code">
+       create a complex folder structure in one line of code
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#populate-the-folder-with-some-fake-data">
+       populate the folder with some fake data
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#test-add-all-again">
+       Test add –all again
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#roll-back-all-files-to-unstaged-status">
+       Roll back all files to unstaged status
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#step-4-add-gitignore-to-the-repo-root">
+       Step 4 - add .gitignore to the repo root
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#step-5-add-all-files-with-the-new-gitignore-exclusion-criteria">
+       Step 5 - Add all files with the new .gitignore exclusion criteria
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#step-6-what-about-pushing-branches-to-the-cloud">
+       Step 6 - What about pushing branches to the cloud?
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#step-7-cloning-a-repo-to-your-local-storage">
+       Step 7 - Cloning a repo to your local storage
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="version-control-git-and-github-command-line-tools">
+<h1>Version control, git and github command line tools<a class="headerlink" href="#version-control-git-and-github-command-line-tools" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="basic-terminolgy">
+<h2>Basic terminolgy<a class="headerlink" href="#basic-terminolgy" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="what-is-version-control">
+<h3>what is version control<a class="headerlink" href="#what-is-version-control" title="Permalink to this headline">¶</a></h3>
+<p>Version control is a type of software that keeps track of every modification to the code in a special kind of database.</p>
+<div class="section" id="why-do-we-need-to-use-version-control-when-we-code">
+<h4>Why do we need to use version control when we code?<a class="headerlink" href="#why-do-we-need-to-use-version-control-when-we-code" title="Permalink to this headline">¶</a></h4>
+<p>If a mistake is made, developers can turn back the clock and compare earlier versions of the code to help fix the mistake while minimizing disruption to all team members.</p>
+</div>
+</div>
+<div class="section" id="what-is-git">
+<h3>What is git<a class="headerlink" href="#what-is-git" title="Permalink to this headline">¶</a></h3>
+<p>Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.</p>
+</div>
+<div class="section" id="what-is-github">
+<h3>What is GitHub<a class="headerlink" href="#what-is-github" title="Permalink to this headline">¶</a></h3>
+<p>GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.</p>
+</div>
+<div class="section" id="what-is-a-repository">
+<h3>What is a repository<a class="headerlink" href="#what-is-a-repository" title="Permalink to this headline">¶</a></h3>
+<p>GIT repositories contain a collection of files from various versions of a Project. These files are imported from the repository into the user’s local server for additional updates and adjustments to the file’s content. A VCS, or Version Control System, is used to produce these versions and save them in a location known as a repository. Cloning refers to the process of copying material from an existing Git Repository using different Git Tools. When the cloning procedure is completed, the user receives the whole repository on his local system. Once the clone is complete, Git expects any future work on the repository will be done as a user.</p>
+</div>
+<div class="section" id="what-is-if-good-for">
+<h3>What is if good for<a class="headerlink" href="#what-is-if-good-for" title="Permalink to this headline">¶</a></h3>
+<p>Typically, a repository is used to organise a single project. Repositories may hold folders and files, photos, movies, spreadsheets, and data sets – anything your project requires. Frequently, repositories include a README file, which contains information about your project. README files are written in Markdown, a plain text language.</p>
+</div>
+<div class="section" id="why-command-line-tools">
+<h3>Why command line tools<a class="headerlink" href="#why-command-line-tools" title="Permalink to this headline">¶</a></h3>
+<p>Github has some fancy UI - but I have never used it as the command line interface does what I need it to do</p>
+</div>
+</div>
+<div class="section" id="context-and-practicalities">
+<h2>Context and practicalities<a class="headerlink" href="#context-and-practicalities" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="setup">
+<h3>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="install-git-and-create-a-github-account">
+<h4>Install git and create a GitHub account<a class="headerlink" href="#install-git-and-create-a-github-account" title="Permalink to this headline">¶</a></h4>
+<p>We will only be using git on the command line for this lesson.
+While there are numerous excellent git GUIs (graphical user interfaces), I believe it is only helpful for those that git becomes a daily routine.
+So the first two things you should do are to sign up for a free GitHub account and install the github command line tools .</p>
+<div class="section" id="varify-that-git-is-installed-on-your-computer">
+<h5>Varify that git is installed on your computer<a class="headerlink" href="#varify-that-git-is-installed-on-your-computer" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git --version
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="install-the-command-line-tools">
+<h4>Install the command line tools<a class="headerlink" href="#install-the-command-line-tools" title="Permalink to this headline">¶</a></h4>
+<p>Go to <span class="xref myst">cli.github.com</span> and install the command line tools for any OS</p>
+</div>
+<div class="section" id="if-you-don-t-have-a-github-user-account">
+<h4>If you don’t have a GitHub user account -<a class="headerlink" href="#if-you-don-t-have-a-github-user-account" title="Permalink to this headline">¶</a></h4>
+<p>Create one <a class="reference external" href="https://github.com/join">here</a></p>
+</div>
+</div>
+<div class="section" id="create-your-first-repo">
+<h3>Create your first repo<a class="headerlink" href="#create-your-first-repo" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="step-1-create-a-folder-to-hold-your-repo">
+<h4>Step 1 - create a folder to hold your repo<a class="headerlink" href="#step-1-create-a-folder-to-hold-your-repo" title="Permalink to this headline">¶</a></h4>
+<p>Open a terminal and create in your sandbox folder a new folder called <code class="docutils literal notranslate"><span class="pre">my_first_git</span></code></p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Solution<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir -p ~/sandbox/my_first_git <span class="o">&amp;&amp;</span> <span class="nb">cd</span> ~/sandbox/my_first_git
+</pre></div>
+</div>
+</div>
+</details></div>
+<div class="section" id="step-2-create-some-basic-content">
+<h4>Step 2 - create some basic content<a class="headerlink" href="#step-2-create-some-basic-content" title="Permalink to this headline">¶</a></h4>
+<p>In that folder create a file named <code class="docutils literal notranslate"><span class="pre">README.md</span></code> and in it add the following text:
+“# This is [your name] first repo”
+“I will use this repo to track my experiments using dcarte”</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Solution<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;# This is [your name] first repo</span>
+<span class="s2">I will use this repo to track my experiments using dcarte&quot;</span> &gt; README.md
+<span class="c1"># confirm that the file exists using cat </span>
+cat README.md
+</pre></div>
+</div>
+</div>
+</details></div>
+<div class="section" id="step-3-initialize-the-repository-using-git">
+<h4>Step 3 - initialize the repository using git<a class="headerlink" href="#step-3-initialize-the-repository-using-git" title="Permalink to this headline">¶</a></h4>
+<p>We need to use git to add some properties to our new folder we do that using the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span></code> command when we are in the root of the folder.</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Solution<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~/sandbox/my_first_git <span class="o">&amp;&amp;</span> git init
+</pre></div>
+</div>
+</div>
+</details></div>
+<div class="section" id="step-3a-look-under-the-hood">
+<h4>Step 3a - look under the hood<a class="headerlink" href="#step-3a-look-under-the-hood" title="Permalink to this headline">¶</a></h4>
+<p>If we just use <code class="docutils literal notranslate"><span class="pre">ls</span></code> to list the files in our repo we will find that it contains only the <a class="reference external" href="http://README.md">README.md</a> file we created.
+The reason for that is that the init process places all of it’s files in what is called a hidden folder that has a dot as a prefix
+In the first session covering bash we discussed how to use <code class="docutils literal notranslate"><span class="pre">ls</span></code> with arguments to show hidden files so let’s do that now to peek into the contents of the <code class="docutils literal notranslate"><span class="pre">.git</span></code> folder we just created</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Solution<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls -a .git
+</pre></div>
+</div>
+</div>
+</details><p>As you can see, the command established local tools to be used to curate any modifications made to the folder’s contents.</p>
+</div>
+<div class="section" id="step-4-add-readme-to-the-repo">
+<h4>Step 4 - Add README to the repo<a class="headerlink" href="#step-4-add-readme-to-the-repo" title="Permalink to this headline">¶</a></h4>
+<p>When you add or modify files in a folder containing a git repo, git detects that the file exists within the repo. However, unless you expressly tell it to, git will not track the file. Git only saves/manages changes to files it tracks, therefore we’ll need to provide a command to ensure that we do, in fact, want git to monitor our new file.
+It is possible to use the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> command after you have made the new file. This command tells you which files git knows to be there.</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Solution<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git status
+</pre></div>
+</div>
+</div>
+</details><p>As you can see in our repo, git knows that README is there and tells us that it isn’t being tracked.
+It also suggests using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> to add it to add README to git tracking system.<br />
+When you add a file to the repository staging environment, you are literally putting it on an index to be processed.</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Solution<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git add README.md <span class="o">&amp;&amp;</span> git status
+</pre></div>
+</div>
+</div>
+</details><p>When you add ‘<a class="reference external" href="http://README.md">README.md</a>’ to the staging environment, it becomes green and is queued for inclusion in the curated files.</p>
+</div>
+<div class="section" id="step-5-commit-changes-to-the-repo">
+<h4>Step 5 - commit changes to the repo<a class="headerlink" href="#step-5-commit-changes-to-the-repo" title="Permalink to this headline">¶</a></h4>
+<p>An integral part of the curation process is documenting (i.e. giving context) the changes you just made.
+You do this by adding a message after the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> command using the argument <code class="docutils literal notranslate"><span class="pre">-m</span></code>.
+The main reason that two process are seperated is to allow multiple changes to be aggragated under one context.
+If you leave a clear explanation of your changes, it can be extremely helpful for future programmers (perhaps even future you!) who are trying to figure out why some change was made.</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Solution<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git commit -m <span class="s2">&quot;my first commit&quot;</span> <span class="o">&amp;&amp;</span> git status
+</pre></div>
+</div>
+</div>
+</details><p>If everything went as expected, you should receive something like this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>On branch main
+nothing to commit, working tree clean
+</pre></div>
+</div>
+</div>
+<div class="section" id="step-6-branches-creation">
+<h4>Step 6 - Branches creation<a class="headerlink" href="#step-6-branches-creation" title="Permalink to this headline">¶</a></h4>
+<p>In our readme example, we may construct a more complex readme file with more material, but some of it may not be finished and can’t be shared just yet.
+Git branches represent portable references to commits in a repository. The files in your new branch have their histories because Git keeps track of the commit from which your new branch ‘branched’.</p>
+<p>To create a workable branch we simply use the command <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span> <span class="pre">my_new_branch_name</span></code></p>
+<p>If everything went as expected, you should receive something like this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Switched to a new branch <span class="s1">&#39;my_new_branch_name&#39;</span>
+</pre></div>
+</div>
+<p>Now let’s add some more content to the <a class="reference external" href="http://README.md">README.md</a> file</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;Adding more info about me to the README file&quot;</span> &gt;&gt; README.md
+git add README.md <span class="o">&amp;&amp;</span> git commit -m <span class="s2">&quot;my first branch commit&quot;</span> <span class="o">&amp;&amp;</span> git status
+</pre></div>
+</div>
+<div class="section" id="to-identify-the-active-branch-use">
+<h5>To identify the active branch use:<a class="headerlink" href="#to-identify-the-active-branch-use" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git branch
+</pre></div>
+</div>
+</div>
+<div class="section" id="to-switch-between-branches-use-git-checkout-branch-name">
+<h5>To switch between branches use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">&lt;branch</span> <span class="pre">name&gt;</span></code>:<a class="headerlink" href="#to-switch-between-branches-use-git-checkout-branch-name" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git checkout main
+</pre></div>
+</div>
+</div>
+<div class="section" id="to-merge-two-local-branches-use-git-merge-non-active-branch-name">
+<h5>To merge two local branches use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span> <span class="pre">&lt;non</span> <span class="pre">active</span> <span class="pre">branch</span> <span class="pre">name&gt;</span></code>:<a class="headerlink" href="#to-merge-two-local-branches-use-git-merge-non-active-branch-name" title="Permalink to this headline">¶</a></h5>
+<p>Git will compare the two files and combine them if no clashes exist</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git merge my_new_branch_name
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="moving-to-the-cloud">
+<h2>Moving to the cloud<a class="headerlink" href="#moving-to-the-cloud" title="Permalink to this headline">¶</a></h2>
+<p>You don’t need to utilise GitHub if you just want to keep track of your own code. You can use GitHub if you wish to work with a team or keep your project files in an external location that you can access from many machines.</p>
+<div class="section" id="step-1-we-ll-use-the-command-line-tools-we-installed-earlier-to-upload-our-local-repository-to-our-github-account">
+<h3>Step 1 - We’ll use the command line tools we installed earlier to upload our local repository to our github account.<a class="headerlink" href="#step-1-we-ll-use-the-command-line-tools-we-installed-earlier-to-upload-our-local-repository-to-our-github-account" title="Permalink to this headline">¶</a></h3>
+<p>Github makes it very simple to do you just use the command <code class="docutils literal notranslate"><span class="pre">gh</span> <span class="pre">repo</span> <span class="pre">create</span></code> and follow the instructions</p>
+<p>We will</p>
+<ol class="simple">
+<li><p>Push an existing local repository to GitHub</p></li>
+<li><p>Path to local repository = this should be left as <code class="docutils literal notranslate"><span class="pre">.</span></code> if you are still in the folder</p></li>
+<li><p>Repository name my_first_git</p></li>
+<li><p>Description = add anything you want here</p></li>
+<li><p>Visibility = If you choose private only you can access</p></li>
+<li><p>Add a remote? Yes - this just links the local repo with the cloud hosted one</p></li>
+<li><p>What should the new remote be called? origin</p></li>
+</ol>
+</div>
+<div class="section" id="step-2-push-the-contents-of-you-new-repo-online">
+<h3>Step 2 - Push the contents of you new repo online<a class="headerlink" href="#step-2-push-the-contents-of-you-new-repo-online" title="Permalink to this headline">¶</a></h3>
+<p>The new repo exists, but it is empty. To populate it with information, we must push our committed material to the cloud using the ‘git push’ command.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git push
+</pre></div>
+</div>
+</div>
+<div class="section" id="step-3-adding-multiple-files">
+<h3>Step 3 - Adding multiple files<a class="headerlink" href="#step-3-adding-multiple-files" title="Permalink to this headline">¶</a></h3>
+<p>What about directories containing many files - do we need to add each file individually?
+As you would expect, the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> command has arguments; we can view these by viewing the help for the function.
+In general, calling a function with the <code class="docutils literal notranslate"><span class="pre">--help</span></code> argument will open the functions documentation that will show the file’s contents.
+To exit the help just press <code class="docutils literal notranslate"><span class="pre">q</span></code> that stands for quit.
+Going over the documentation try to find the solution to include many files at once.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git add --help
+</pre></div>
+</div>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Solution<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">The solution is to pass the <code class="docutils literal notranslate"><span class="pre">--all</span></code> argument; however, in our current situation, this won’t work since we only have one file in our new repository.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git add --all  <span class="o">&amp;&amp;</span> git status
+</pre></div>
+</div>
+</div>
+</details><p>To simulate a complex structure let’s populate our repo with some folders and some files in them.
+These pieces of code are dense on purpose - for those interested, consider them an extension to the previous part demonstrating some of the more complex aspects of bash; for those who aren’t, execute them in your terminal to populate your repo with some synthetic files.</p>
+<div class="section" id="create-a-complex-folder-structure-in-one-line-of-code">
+<h4>create a complex folder structure in one line of code<a class="headerlink" href="#create-a-complex-folder-structure-in-one-line-of-code" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir -p <span class="nv">$PWD</span>/<span class="o">{</span>Notebooks,Code,Tmp,Data/<span class="o">{</span>raw,processed,share<span class="o">}</span>,Report/<span class="o">{</span>Tables,Figures,Text<span class="o">}</span>,Presentation,Background/<span class="o">{</span>pdf,pptx<span class="o">}}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="populate-the-folder-with-some-fake-data">
+<h4>populate the folder with some fake data<a class="headerlink" href="#populate-the-folder-with-some-fake-data" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> i <span class="k">in</span> <span class="o">{</span><span class="m">1</span>..5<span class="o">}</span><span class="p">;</span> <span class="k">do</span> <span class="nb">echo</span> <span class="s2">&quot;id, name, value\n </span><span class="nv">$i</span><span class="s2">, </span><span class="nv">$i</span><span class="s2">, </span><span class="si">${</span><span class="nv">i</span><span class="si">}</span><span class="s2">&quot;</span> &gt; Data/raw/data_<span class="si">${</span><span class="nv">i</span><span class="si">}</span>.csv<span class="p">;</span> <span class="k">done</span>
+<span class="k">for</span> i <span class="k">in</span> <span class="o">{</span>g..h<span class="o">}</span><span class="p">;</span> <span class="k">do</span> <span class="nb">echo</span> <span class="s2">&quot;# notebook </span><span class="nv">$i</span><span class="s2">&quot;</span> &gt; Notebooks/notebook_<span class="si">${</span><span class="nv">i</span><span class="si">}</span>.ipynb<span class="p">;</span> <span class="k">done</span>
+<span class="k">for</span> i <span class="k">in</span> <span class="o">{</span>a..c<span class="o">}</span><span class="p">;</span> <span class="k">do</span> <span class="nb">echo</span> <span class="s2">&quot;# presentation </span><span class="nv">$i</span><span class="s2">&quot;</span> &gt; Presentation/presentation_<span class="si">${</span><span class="nv">i</span><span class="si">}</span>.pptx<span class="p">;</span> <span class="k">done</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="test-add-all-again">
+<h4>Test add –all again<a class="headerlink" href="#test-add-all-again" title="Permalink to this headline">¶</a></h4>
+<p>Now that we have enough meat in our repository, we can test the add all functionality.</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Solution<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">The solution is to pass the <code class="docutils literal notranslate"><span class="pre">--all</span></code> argument; Now, that we have multiple files in our new repository we should see all of them waiting to be commited.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git add --all 
+</pre></div>
+</div>
+</div>
+</details></div>
+<div class="section" id="roll-back-all-files-to-unstaged-status">
+<h4>Roll back all files to unstaged status<a class="headerlink" href="#roll-back-all-files-to-unstaged-status" title="Permalink to this headline">¶</a></h4>
+<p>For the sake of this example we want to reset the staging status of all of our files. The <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span></code> command does that exactly.
+If you wish to unstage a specific file use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">restore</span> <span class="pre">--staged</span> <span class="pre">&lt;file&gt;</span></code> as suggested by the function</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git reset <span class="o">&amp;&amp;</span> git status
+</pre></div>
+</div>
+</div>
+<div class="section" id="step-4-add-gitignore-to-the-repo-root">
+<h4>Step 4 - add .gitignore to the repo root<a class="headerlink" href="#step-4-add-gitignore-to-the-repo-root" title="Permalink to this headline">¶</a></h4>
+<p>Before moving forward, it is handy to exclude specific folders and types of files from the cloud. In projects involving sensitive data, like UKDRI-CRT, excluding sensitive files is particularly important. Having some data locally is beneficial in terms of processing speed and ease of use, but sharing this data (especially in healthcare) to the public domain is a severe violation of IG protocols. Creating and populating the hidden <em>.gitignore</em> file is a simple way to exclude any data files from being uploaded into the cloud.</p>
+<div class="admonition-challenge admonition">
+<p class="admonition-title">Challenge</p>
+<ol class="simple">
+<li><p>Create a new file in the root of the repository called <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code></p></li>
+<li><p>The file should have the following lines included
+Data/
+Tmp/</p></li>
+</ol>
+</div>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Solution<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;Data/</span>
+<span class="s2">Tmp/&quot;</span> &gt; .gitignore
+</pre></div>
+</div>
+</div>
+</details></div>
+<div class="section" id="step-5-add-all-files-with-the-new-gitignore-exclusion-criteria">
+<h4>Step 5 - Add all files with the new .gitignore exclusion criteria<a class="headerlink" href="#step-5-add-all-files-with-the-new-gitignore-exclusion-criteria" title="Permalink to this headline">¶</a></h4>
+<p>Now that we protected ourselves, we can use git add all without any worry.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git add --all  <span class="o">&amp;&amp;</span> git status <span class="o">&amp;&amp;</span> git commit -m <span class="s2">&quot;adding multiple files&quot;</span> <span class="o">&amp;&amp;</span> git push
+</pre></div>
+</div>
+<p>As you can see, only files in the authorised directories are uploaded to the staging area, and when we go online to our new Github repo, we can see that the files have been successfully added to the cloud.</p>
+</div>
+<div class="section" id="step-6-what-about-pushing-branches-to-the-cloud">
+<h4>Step 6 - What about pushing branches to the cloud?<a class="headerlink" href="#step-6-what-about-pushing-branches-to-the-cloud" title="Permalink to this headline">¶</a></h4>
+<p>Working using branches can simplify the process of collaborating on projects with numerous persons working on similar overlapping aims.
+For example, research may examine the same patient group to create distinct markers from the same data.
+In this case, we would have a single repository for the project because all of the base scripts are used to analyse the data, but higher branches would take alternative approaches to the processed data. The project leaders may eventually wish to combine these various branches into a standard updated repo (which is beyond the scope of this tutorial, but you can get the gist of what needs to be done).</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git push origin my_new_branch_name
+</pre></div>
+</div>
+</div>
+<div class="section" id="step-7-cloning-a-repo-to-your-local-storage">
+<h4>Step 7 - Cloning a repo to your local storage<a class="headerlink" href="#step-7-cloning-a-repo-to-your-local-storage" title="Permalink to this headline">¶</a></h4>
+<p>To work on your source code, you need a location to store it locally, but how can you get the contents of your remote repository into your local storage?
+Here comes Cloning. Cloning generates a repository clone with a link back to the original.
+Each repository can only pull, retrieve, and push back.
+Pushing may not function because repositories are protected from being edited by anybody except the repository owners and contributors.
+In a way cloning is like downloading a file from a read-only folder to your computer.
+But it is the simplest way to contribute to a project.
+Let us clone the dcarte repo to our local drive.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~/sandbox <span class="o">&amp;&amp;</span> git clone https://github.com/esoreq/dcarte
+</pre></div>
+</div>
+<p>This process downloads the latest version of dcarte to your local drive.
+The benefit of having a local snapshot of the code is that you can change parts of it and not wait for changes to roll out in the proper pip installation
+Another benefit lies in your ability to contribute to the project if you find an overlooked problem.</p>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./tutorials/session_01"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="anaconda101.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Anaconda environment 101</p>
+        </div>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Eyal Soreq<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

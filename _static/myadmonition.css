@@ -1,0 +1,31 @@
+.admonition-shell {
+    margin: 0;
+    padding: 5px;
+    list-style: none;
+    background: #000000;
+    color: #dfffd3;
+    font: 0.8em 'Andale Mono', Consolas, 'Courier New';
+    line-height: 1.6em;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+.admonition-shell .admonition-title {
+    background-color: rgba(246, 0, 0, 0.646);
+}
+.admonition-shell .admonition-title:before {
+    color: rgb(246, 0, 0);
+    content: '\f19d';
+}
+
+
+.code-block {
+    margin: 0;
+    padding: 5px;
+    list-style: none;
+    background: #000000;
+    color: #dfffd3;
+    font: 0.8em 'Andale Mono', Consolas, 'Courier New';
+    line-height: 1.6em;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+}

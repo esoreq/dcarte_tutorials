@@ -1,0 +1,1560 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Derived datasets &#8212; DCARTE_TUTORIALS</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/extra.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pdf_print.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom_layouts.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/myadmonition.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/save_state.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://esoreq.github.io/DCARTE_TUTORIALS/tutorials/session_02/derived.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Developing a recipe of your own" href="recipes.html" />
+    <link rel="prev" title="Downloading data with dcarte" href="downloading.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">DCARTE_TUTORIALS</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../about/intro.html">
+   some intro stuff about me
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../session_01/overview.html">
+   Session 01 - basics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../session_01/bash101.html">
+     Introduction to Linux Based Command Line Interactions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../session_01/anaconda101.html">
+     Anaconda environment 101
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../session_01/git101.html">
+     Version control, git and github command line tools
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="overview.html">
+   Session 02 - Ingesting UKDRI CRT Data
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="configure.html">
+     Configuration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="downloading.html">
+     Downloading data with dcarte
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Derived datasets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="recipes.html">
+     Developing a recipe of your own
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/tutorials/session_02/derived.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://esoreq.github.io/DCARTE_TUTORIALS/"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://esoreq.github.io/DCARTE_TUTORIALS//issues/new?title=Issue%20on%20page%20%2Ftutorials/session_02/derived.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/esoreq.github.io/DCARTE_TUTORIALS/edit/master/tutorials/session_02/derived.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Derived datasets</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="section" id="derived-datasets">
+<h1>Derived datasets<a class="headerlink" href="#derived-datasets" title="Permalink to this headline">¶</a></h1>
+<p>We’ve already gone through how to use DCARTE to get UKDRI CRT raw datasets. However, a central element in the process of knowledge discovery (aka data science) is the creation of features that fuse different data sources, transform a single data source using some logic, or aggregate datasets to a relevant frequency.</p>
+<p>Let’s create a step by step example that will make this point simpler to follow.</p>
+<p>We start by importing dcarte and loading PIR Activity across the houses</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dcarte</span> 
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> 
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span> 
+<span class="n">activity</span> <span class="o">=</span> <span class="n">dcarte</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;Activity&#39;</span><span class="p">,</span><span class="s1">&#39;raw&#39;</span><span class="p">)</span>
+<span class="n">activity</span><span class="o">.</span><span class="n">start_date</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="s1">&#39;min&#39;</span><span class="p">,</span><span class="s1">&#39;max&#39;</span><span class="p">,</span><span class="s1">&#39;count&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="nn">Input In [1],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">dcarte</span> 
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> 
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span> 
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;dcarte&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>We then inspect the DataFrame’s info()</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">activity</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 6294321 entries, 0 to 6294320
+Data columns (total 6 columns):
+ #   Column         Dtype         
+---  ------         -----         
+ 0   start_date     datetime64[ns]
+ 1   patient_id     object        
+ 2   home_id        object        
+ 3   location_id    object        
+ 4   location_name  object        
+ 5   source         object        
+dtypes: datetime64[ns](1), object(5)
+memory usage: 288.1+ MB
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this example, we wish to convert the raw activity data into a wide one-hot encoding tabular format that allows us to easily analyse the level of activity among households over time (e.g. every six hours every day or every week). One of the first things we should look at is the frequency of activity throughout the various locations in order to simplify the data by deleting or merging certain areas around the household. The best technique to find such targets is to use the pandas plotting capabilities.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">activity</span><span class="o">.</span><span class="n">location_name</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">barh</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../../_images/derived_6_1.png" src="../../_images/derived_6_1.png" />
+</div>
+</div>
+<p>The first step is to eliminate unique locations only in a few houses and combine contextually similar locations. This will make it easier to generalise our findings across all homes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">location_by_pid</span> <span class="o">=</span>  <span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">activity</span><span class="o">.</span><span class="n">location_name</span><span class="p">,</span><span class="n">activity</span><span class="o">.</span><span class="n">patient_id</span><span class="p">)</span>
+<span class="n">location_by_pid</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>patient_id</th>
+      <th>2GN1PHeHwRzNYQ7q4Nvg7g</th>
+      <th>2TmRrtnsd3WisLYTmw5id1</th>
+      <th>2zbyXzYNKPwiPtjaA2L64o</th>
+      <th>3LXU9Vf5dVsXtnJwxAhaN6</th>
+      <th>3hY7Mp7u9YPo1xMARSxLhc</th>
+      <th>4h1dAuzg9rdrhyojwxUS26</th>
+      <th>576646jHRwm4KkF9uzRnaC</th>
+      <th>5aQpCSrtPFyympF2G14a6c</th>
+      <th>5xSoeEijWNFxswzMEAih71</th>
+      <th>64RLyRh1fEUutdhMnvu17d</th>
+      <th>...</th>
+      <th>WgTjg4VRZSr4r7bCSdSetZ</th>
+      <th>WrXiKEAY93k5DhEinCTC6y</th>
+      <th>WtYLx1dEr6hHgQDg8TKcGP</th>
+      <th>X7dJAZjrhEa1kRFUkoZVvg</th>
+      <th>XsfBVz6GP7XtvhY4CiAvuf</th>
+      <th>Xv41AaXiVYBKFAa7SLq8F5</th>
+      <th>XvG4pZADpDNdWsQfKrAt9a</th>
+      <th>YJMET4inKfFcBERma2tQRi</th>
+      <th>YQb22UBcPbedJqEiKAqvDU</th>
+      <th>YYGGmsEaf2gP4JNN9kMprV</th>
+    </tr>
+    <tr>
+      <th>location_name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>WC1</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>bathroom1</th>
+      <td>3509</td>
+      <td>126</td>
+      <td>19547</td>
+      <td>15532</td>
+      <td>16848</td>
+      <td>30386</td>
+      <td>2632</td>
+      <td>529</td>
+      <td>160</td>
+      <td>10806</td>
+      <td>...</td>
+      <td>698</td>
+      <td>1171</td>
+      <td>9356</td>
+      <td>3897</td>
+      <td>5028</td>
+      <td>2901</td>
+      <td>0</td>
+      <td>1396</td>
+      <td>9</td>
+      <td>15302</td>
+    </tr>
+    <tr>
+      <th>bedroom1</th>
+      <td>20576</td>
+      <td>408</td>
+      <td>21122</td>
+      <td>3418</td>
+      <td>19612</td>
+      <td>30672</td>
+      <td>6476</td>
+      <td>477</td>
+      <td>884</td>
+      <td>12204</td>
+      <td>...</td>
+      <td>687</td>
+      <td>3011</td>
+      <td>40621</td>
+      <td>3740</td>
+      <td>21952</td>
+      <td>7696</td>
+      <td>8376</td>
+      <td>2969</td>
+      <td>12</td>
+      <td>9161</td>
+    </tr>
+    <tr>
+      <th>cellar</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>conservatory</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>corridor1</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>15764</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>dining room</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>61311</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>5937</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>hallway</th>
+      <td>9561</td>
+      <td>568</td>
+      <td>41467</td>
+      <td>2735</td>
+      <td>0</td>
+      <td>21455</td>
+      <td>0</td>
+      <td>5366</td>
+      <td>2860</td>
+      <td>13721</td>
+      <td>...</td>
+      <td>2708</td>
+      <td>1733</td>
+      <td>44856</td>
+      <td>14632</td>
+      <td>13702</td>
+      <td>6442</td>
+      <td>7724</td>
+      <td>4810</td>
+      <td>873</td>
+      <td>4242</td>
+    </tr>
+    <tr>
+      <th>kitchen</th>
+      <td>18917</td>
+      <td>384</td>
+      <td>59558</td>
+      <td>0</td>
+      <td>44737</td>
+      <td>47643</td>
+      <td>13244</td>
+      <td>5222</td>
+      <td>4256</td>
+      <td>25494</td>
+      <td>...</td>
+      <td>2808</td>
+      <td>2940</td>
+      <td>56556</td>
+      <td>10373</td>
+      <td>49428</td>
+      <td>8332</td>
+      <td>13582</td>
+      <td>5442</td>
+      <td>3333</td>
+      <td>25864</td>
+    </tr>
+    <tr>
+      <th>living room</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>15061</td>
+      <td>4187</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>lounge</th>
+      <td>13572</td>
+      <td>286</td>
+      <td>28120</td>
+      <td>641</td>
+      <td>26965</td>
+      <td>49330</td>
+      <td>1282</td>
+      <td>5452</td>
+      <td>1408</td>
+      <td>16829</td>
+      <td>...</td>
+      <td>1222</td>
+      <td>3899</td>
+      <td>49265</td>
+      <td>10091</td>
+      <td>30690</td>
+      <td>0</td>
+      <td>1905</td>
+      <td>3099</td>
+      <td>4343</td>
+      <td>14805</td>
+    </tr>
+    <tr>
+      <th>office</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>study</th>
+      <td>0</td>
+      <td>0</td>
+      <td>10828</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<p>13 rows × 89 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">location_by_pid</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">,</span><span class="n">cbar</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">left</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">([]);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/derived_9_0.png" src="../../_images/derived_9_0.png" />
+</div>
+</div>
+<p>A simple interpretation of the above plot can be to do the following cleaning tasks:</p>
+<ul class="simple">
+<li><p>filter the cellar and the conservatory,</p></li>
+<li><p>merge WC1 and bathroom1</p></li>
+<li><p>merge study and office</p></li>
+<li><p>merge the lounge, dining room and living room</p></li>
+<li><p>merge the corridor and hallway</p></li>
+</ul>
+<p>Let’s see an example of how to do this using pandas</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mask</span> <span class="o">=</span> <span class="o">~</span><span class="n">activity</span><span class="o">.</span><span class="n">location_name</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">&#39;cellar&#39;</span><span class="p">,</span><span class="s1">&#39;conservatory&#39;</span><span class="p">])</span>
+<span class="n">activity</span> <span class="o">=</span> <span class="n">activity</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
+<span class="n">activity</span><span class="o">.</span><span class="n">location_name</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;bedroom1&#39;, &#39;kitchen&#39;, &#39;bathroom1&#39;, &#39;lounge&#39;, &#39;hallway&#39;,
+       &#39;dining room&#39;, &#39;living room&#39;, &#39;corridor1&#39;, &#39;WC1&#39;, &#39;study&#39;,
+       &#39;office&#39;], dtype=object)
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are many ways to remap one value into another value in Python. However, in the process of transparency, interpretability and ease of change, I find the dictionary approach shown below to be the simplest to foolow and implement.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mapping</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;bedroom1&#39;</span><span class="p">:</span><span class="s1">&#39;bedroom&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;bathroom1&#39;</span><span class="p">:</span><span class="s1">&#39;bathroom&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;hallway&#39;</span><span class="p">:</span><span class="s1">&#39;hallway&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;lounge&#39;</span><span class="p">:</span><span class="s1">&#39;lounge&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;kitchen&#39;</span><span class="p">:</span><span class="s1">&#39;kitchen&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;living room&#39;</span><span class="p">:</span><span class="s1">&#39;lounge&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;corridor1&#39;</span><span class="p">:</span><span class="s1">&#39;hallway&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;dining room&#39;</span><span class="p">:</span><span class="s1">&#39;lounge&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;WC1&#39;</span><span class="p">:</span><span class="s1">&#39;bathroom&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;study&#39;</span><span class="p">:</span><span class="s1">&#39;study&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;office&#39;</span><span class="p">:</span><span class="s1">&#39;study&#39;</span><span class="p">}</span>
+<span class="n">activity</span><span class="o">.</span><span class="n">location_name</span> <span class="o">=</span> <span class="n">activity</span><span class="o">.</span><span class="n">location_name</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">mapping</span><span class="p">)</span>
+<span class="n">activity</span><span class="o">.</span><span class="n">location_name</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Revisiting the plots we used before is a useful sanity check to validate that the changes we made we applied.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">activity</span><span class="o">.</span><span class="n">location_name</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">barh</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../../_images/derived_15_1.png" src="../../_images/derived_15_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">activity</span><span class="o">.</span><span class="n">location_name</span><span class="p">,</span><span class="n">activity</span><span class="o">.</span><span class="n">patient_id</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">,</span><span class="n">cbar</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">left</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">([]);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/derived_16_0.png" src="../../_images/derived_16_0.png" />
+</div>
+</div>
+<p>After cleaning the location_name we can select just columns of intrest by passing a list of columns names to the DataFrame.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">activity</span><span class="p">[[</span><span class="s1">&#39;start_date&#39;</span><span class="p">,</span><span class="s1">&#39;patient_id&#39;</span><span class="p">,</span><span class="s1">&#39;location_name&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>start_date</th>
+      <th>patient_id</th>
+      <th>location_name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2020-12-09 14:53:17</td>
+      <td>Dr1tnvKDk2bHG8YS21nwiR</td>
+      <td>bedroom</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2020-12-09 14:53:18</td>
+      <td>Dr1tnvKDk2bHG8YS21nwiR</td>
+      <td>kitchen</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2020-12-09 14:53:18</td>
+      <td>Dr1tnvKDk2bHG8YS21nwiR</td>
+      <td>bathroom</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2020-12-09 14:53:19</td>
+      <td>Dr1tnvKDk2bHG8YS21nwiR</td>
+      <td>lounge</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2020-12-09 14:53:36</td>
+      <td>Dr1tnvKDk2bHG8YS21nwiR</td>
+      <td>hallway</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>5904704</th>
+      <td>2022-02-28 07:21:59</td>
+      <td>X7dJAZjrhEa1kRFUkoZVvg</td>
+      <td>lounge</td>
+    </tr>
+    <tr>
+      <th>5904705</th>
+      <td>2022-02-28 07:22:02</td>
+      <td>VmrLbcBzyzacPx8WBnnttf</td>
+      <td>lounge</td>
+    </tr>
+    <tr>
+      <th>5904706</th>
+      <td>2022-02-28 07:22:10</td>
+      <td>X7dJAZjrhEa1kRFUkoZVvg</td>
+      <td>hallway</td>
+    </tr>
+    <tr>
+      <th>5904707</th>
+      <td>2022-02-28 07:22:11</td>
+      <td>2zbyXzYNKPwiPtjaA2L64o</td>
+      <td>kitchen</td>
+    </tr>
+    <tr>
+      <th>5904708</th>
+      <td>2022-02-28 07:22:12</td>
+      <td>K6HnqfpnKjDE2pRfKxE6sX</td>
+      <td>bathroom</td>
+    </tr>
+  </tbody>
+</table>
+<p>5884948 rows × 3 columns</p>
+</div></div></div>
+</div>
+<p>Now, let’s say we decide to merge the study with the lounge location, all we need to run the entire process again and update the mapping dictionary.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">activity</span> <span class="o">=</span> <span class="n">dcarte</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;Activity&#39;</span><span class="p">,</span><span class="s1">&#39;raw&#39;</span><span class="p">,</span><span class="n">since</span><span class="o">=</span><span class="s1">&#39;2022-02-01&#39;</span><span class="p">,</span><span class="n">until</span><span class="o">=</span><span class="s1">&#39;2022-02-20&#39;</span><span class="p">,</span><span class="n">reload</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">mask</span> <span class="o">=</span> <span class="o">~</span><span class="n">activity</span><span class="o">.</span><span class="n">location_name</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">&#39;cellar&#39;</span><span class="p">,</span><span class="s1">&#39;conservatory&#39;</span><span class="p">])</span>
+<span class="n">activity</span> <span class="o">=</span> <span class="n">activity</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
+<span class="n">mapping</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;bedroom1&#39;</span><span class="p">:</span><span class="s1">&#39;bedroom&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;bathroom1&#39;</span><span class="p">:</span><span class="s1">&#39;bathroom&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;hallway&#39;</span><span class="p">:</span><span class="s1">&#39;hallway&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;lounge&#39;</span><span class="p">:</span><span class="s1">&#39;lounge&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;kitchen&#39;</span><span class="p">:</span><span class="s1">&#39;kitchen&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;living room&#39;</span><span class="p">:</span><span class="s1">&#39;lounge&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;corridor1&#39;</span><span class="p">:</span><span class="s1">&#39;hallway&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;dining room&#39;</span><span class="p">:</span><span class="s1">&#39;lounge&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;WC1&#39;</span><span class="p">:</span><span class="s1">&#39;bathroom&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;study&#39;</span><span class="p">:</span><span class="s1">&#39;lounge&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;office&#39;</span><span class="p">:</span><span class="s1">&#39;lounge&#39;</span><span class="p">}</span>
+<span class="n">activity</span><span class="o">.</span><span class="n">location_name</span> <span class="o">=</span> <span class="n">activity</span><span class="o">.</span><span class="n">location_name</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">mapping</span><span class="p">)</span>
+<span class="n">activity</span><span class="o">.</span><span class="n">location_name</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Finished Loading Activity in:                  0.6 seconds   
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;bedroom&#39;, &#39;kitchen&#39;, &#39;bathroom&#39;, &#39;lounge&#39;, &#39;hallway&#39;],
+      dtype=object)
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the end, we now have a single dataset in which the majority of households are similar and there are very few homes with missing locations.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">activity</span><span class="o">.</span><span class="n">location_name</span><span class="p">,</span><span class="n">activity</span><span class="o">.</span><span class="n">patient_id</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">matplotlib.colors</span> <span class="kn">import</span> <span class="n">LogNorm</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> 
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">df</span><span class="p">,</span>  <span class="n">norm</span><span class="o">=</span><span class="n">LogNorm</span><span class="p">(),</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">left</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">([]);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/derived_22_0.png" src="../../_images/derived_22_0.png" />
+</div>
+</div>
+<p>Converting this dataset to a wide one-hot encoding format where time and patient ids are the indexes and the different locations are the columns requires calling a pandas function called <code class="docutils literal notranslate"><span class="pre">pd.get_dummies</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">activity</span> <span class="o">=</span> <span class="n">activity</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s1">&#39;patient_id&#39;</span><span class="p">,</span><span class="s1">&#39;start_date&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">location_name</span>
+<span class="n">activity</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">activity</span><span class="p">)</span>
+<span class="n">activity</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>bathroom</th>
+      <th>bedroom</th>
+      <th>hallway</th>
+      <th>kitchen</th>
+      <th>lounge</th>
+    </tr>
+    <tr>
+      <th>patient_id</th>
+      <th>start_date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="5" valign="top">Dr1tnvKDk2bHG8YS21nwiR</th>
+      <th>2020-12-09 14:53:17</th>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2020-12-09 14:53:18</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2020-12-09 14:53:18</th>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2020-12-09 14:53:19</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2020-12-09 14:53:36</th>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>X7dJAZjrhEa1kRFUkoZVvg</th>
+      <th>2022-02-28 07:21:59</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>VmrLbcBzyzacPx8WBnnttf</th>
+      <th>2022-02-28 07:22:02</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>X7dJAZjrhEa1kRFUkoZVvg</th>
+      <th>2022-02-28 07:22:10</th>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2zbyXzYNKPwiPtjaA2L64o</th>
+      <th>2022-02-28 07:22:11</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>K6HnqfpnKjDE2pRfKxE6sX</th>
+      <th>2022-02-28 07:22:12</th>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<p>5884948 rows × 5 columns</p>
+</div></div></div>
+</div>
+<p>It would be helpful to formalise this process so that it does not require us to run it each time. Formalising derived datasets is another aspect of dcarte that simplifies the collaborations on different parts of data processing. Dcarte comes armed with three samples derived datasets that can be available using a simple command. Running any of the three functions listed below will add a single domain to your dcarte library. These functions will automatically download needed datasets and create the different local datasets described internally.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dcarte.derived</span> <span class="kn">import</span> <span class="p">(</span><span class="n">create_base_datasets</span><span class="p">,</span>
+                            <span class="n">create_weekly_profile</span><span class="p">)</span>
+<span class="n">create_base_datasets</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Finished Loading door in:                      0.0 seconds   
+Finished Loading doors in:                     0.0 seconds   
+Finished Loading environmental in:             0.1 seconds   
+Finished Loading device_types in:              0.0 seconds   
+Finished Loading appliances in:                0.0 seconds   
+Finished Loading doors in:                     0.0 seconds   
+Finished Loading activity in:                  0.0 seconds   
+Finished Loading device_types in:              0.0 seconds   
+Finished Loading activity in:                  0.0 seconds   
+Finished Loading entryway in:                  0.0 seconds   
+Finished Loading sleep_event in:               0.1 seconds   
+Finished Loading vital_signs in:               0.0 seconds   
+Finished Loading blood_pressure in:            0.0 seconds   
+Finished Loading device_types in:              0.0 seconds   
+Finished Loading sleep_mat in:                 0.0 seconds   
+Finished Loading motion in:                    0.0 seconds   
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">create_weekly_profile</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Finished Loading motion in:                    0.1 seconds   
+Finished Loading activity_dailies in:          0.0 seconds   
+Finished Loading sleep in:                     0.0 seconds   
+Finished Loading sleep_dailies in:             0.0 seconds   
+Finished Loading physiology in:                0.0 seconds   
+Finished Loading physiology_dailies in:        0.0 seconds   
+Finished Loading Habitat in:                   0.1 seconds   
+Finished Loading Habitat in:                   0.1 seconds   
+</pre></div>
+</div>
+</div>
+</div>
+<p>When you run dcarte.domains() for the final time, you will notice that you now have a greater number of domains under your control than before. In the following section, we will go over one of these recipes in detail and show you how to create an expansion of it on your own using the material you have gained so far in this tutorial.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dcarte</span><span class="o">.</span><span class="n">domains</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>RAW</th>
+      <th>BASE</th>
+      <th>LEGACY</th>
+      <th>PROFILE</th>
+      <th>SLEEP_STUDY</th>
+      <th>LOOKUP</th>
+      <th>BED_HABITS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Activity</td>
+      <td>Bed_Occupancy</td>
+      <td>Device_Type</td>
+      <td>Activity_Dailies</td>
+      <td>Diurnal</td>
+      <td>Device_Types</td>
+      <td>Bed_Occupancy</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Appliances</td>
+      <td>Doors</td>
+      <td>Doors</td>
+      <td>Activity_Weeklies</td>
+      <td>Nocturnal</td>
+      <td>Homes</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Behavioural</td>
+      <td>Entryway</td>
+      <td>Entryway</td>
+      <td>Light</td>
+      <td>Withings_Nights</td>
+      <td>Patients</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Blood_Pressure</td>
+      <td>Habitat</td>
+      <td>Flags</td>
+      <td>Physiology_Dailies</td>
+      <td>Withings_Tidy</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Door</td>
+      <td>Kitchen</td>
+      <td>Light</td>
+      <td>Physiology_Weeklies</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Encounter</td>
+      <td>Motion</td>
+      <td>Motion</td>
+      <td>Sleep_Dailies</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Environmental</td>
+      <td>Motion_New</td>
+      <td>Observation</td>
+      <td>Sleep_Weeklies</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Issue</td>
+      <td>Physiology</td>
+      <td>Physiology</td>
+      <td>Temperature</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Observation_Notes</td>
+      <td>Sleep</td>
+      <td>Temperature</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Procedure</td>
+      <td>Transitions</td>
+      <td>Wellbeing</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Sleep_Event</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Sleep_Mat</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Vital_Signs</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">dcarte</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;Activity_Dailies&#39;</span><span class="p">,</span><span class="s1">&#39;profile&#39;</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Finished Loading Activity_Dailies in:          0.0 seconds   
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>location_name</th>
+      <th>Bathroom</th>
+      <th>Bedroom</th>
+      <th>Hallway</th>
+      <th>Kitchen</th>
+      <th>Lounge</th>
+      <th>bed_out</th>
+      <th>Total</th>
+    </tr>
+    <tr>
+      <th>patient_id</th>
+      <th>start_date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="5" valign="top">2GN1PHeHwRzNYQ7q4Nvg7g</th>
+      <th>2021-05-14 12:00:00</th>
+      <td>22.0</td>
+      <td>170.0</td>
+      <td>44.0</td>
+      <td>94.0</td>
+      <td>46.0</td>
+      <td>NaN</td>
+      <td>376.0</td>
+    </tr>
+    <tr>
+      <th>2021-05-15 12:00:00</th>
+      <td>15.0</td>
+      <td>59.0</td>
+      <td>37.0</td>
+      <td>134.0</td>
+      <td>54.0</td>
+      <td>NaN</td>
+      <td>299.0</td>
+    </tr>
+    <tr>
+      <th>2021-05-16 12:00:00</th>
+      <td>31.0</td>
+      <td>225.0</td>
+      <td>43.0</td>
+      <td>94.0</td>
+      <td>38.0</td>
+      <td>NaN</td>
+      <td>431.0</td>
+    </tr>
+    <tr>
+      <th>2021-05-17 12:00:00</th>
+      <td>20.0</td>
+      <td>153.0</td>
+      <td>40.0</td>
+      <td>112.0</td>
+      <td>38.0</td>
+      <td>NaN</td>
+      <td>363.0</td>
+    </tr>
+    <tr>
+      <th>2021-05-18 12:00:00</th>
+      <td>15.0</td>
+      <td>207.0</td>
+      <td>35.0</td>
+      <td>69.0</td>
+      <td>47.0</td>
+      <td>NaN</td>
+      <td>373.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th rowspan="5" valign="top">YYGGmsEaf2gP4JNN9kMprV</th>
+      <th>2022-01-27 12:00:00</th>
+      <td>86.0</td>
+      <td>32.0</td>
+      <td>43.0</td>
+      <td>224.0</td>
+      <td>131.0</td>
+      <td>6.0</td>
+      <td>522.0</td>
+    </tr>
+    <tr>
+      <th>2022-01-28 12:00:00</th>
+      <td>120.0</td>
+      <td>42.0</td>
+      <td>34.0</td>
+      <td>190.0</td>
+      <td>80.0</td>
+      <td>5.0</td>
+      <td>471.0</td>
+    </tr>
+    <tr>
+      <th>2022-01-29 12:00:00</th>
+      <td>167.0</td>
+      <td>70.0</td>
+      <td>42.0</td>
+      <td>259.0</td>
+      <td>127.0</td>
+      <td>9.0</td>
+      <td>674.0</td>
+    </tr>
+    <tr>
+      <th>2022-01-30 12:00:00</th>
+      <td>140.0</td>
+      <td>64.0</td>
+      <td>20.0</td>
+      <td>182.0</td>
+      <td>109.0</td>
+      <td>16.0</td>
+      <td>531.0</td>
+    </tr>
+    <tr>
+      <th>2022-01-31 12:00:00</th>
+      <td>124.0</td>
+      <td>73.0</td>
+      <td>82.0</td>
+      <td>184.0</td>
+      <td>96.0</td>
+      <td>6.0</td>
+      <td>565.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>12188 rows × 7 columns</p>
+</div></div></div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./tutorials/session_02"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="downloading.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Downloading data with dcarte</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="recipes.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Developing a recipe of your own</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Eyal Soreq<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

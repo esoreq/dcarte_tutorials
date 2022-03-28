@@ -1,0 +1,1464 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction to Linux Based Command Line Interactions &#8212; DCARTE_TUTORIALS</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/extra.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pdf_print.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom_layouts.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/myadmonition.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/save_state.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://esoreq.github.io/DCARTE_TUTORIALS/tutorials/session_01/bash101.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Anaconda environment 101" href="anaconda101.html" />
+    <link rel="prev" title="Session 01 - basics" href="overview.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">DCARTE_TUTORIALS</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../about/intro.html">
+   some intro stuff about me
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="overview.html">
+   Session 01 - basics
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Introduction to Linux Based Command Line Interactions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="anaconda101.html">
+     Anaconda environment 101
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="git101.html">
+     Version control, git and github command line tools
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/tutorials/session_01/bash101.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://esoreq.github.io/DCARTE_TUTORIALS/"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://esoreq.github.io/DCARTE_TUTORIALS//issues/new?title=Issue%20on%20page%20%2Ftutorials/session_01/bash101.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/esoreq.github.io/DCARTE_TUTORIALS/edit/master/tutorials/session_01/bash101.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-would-i-use-a-terminal">
+   Why would I use a Terminal
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic-terminology">
+   Basic terminology
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#graphical-user-interface-gui">
+     graphical user interface (GUI)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#command-line-interface-cli">
+     Command-line interface (CLI)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-shell-terminal">
+     The Shell/Terminal
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-bash">
+     What is Bash
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#context-and-practicalities">
+   Context and practicalities
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#opening-a-terminal-on-your-local-computer">
+     Opening a terminal on your local computer
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#command-prompt">
+     Command prompt
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#shell-commands-structure">
+     Shell Commands structure
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#commands">
+   Commands
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#use-ls-to-list-folder-contents">
+     Use
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ls
+      </span>
+     </code>
+     to list folder contents
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#managing-content-in-the-filesystem">
+     Managing Content in the Filesystem
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-a-sandbox-directory-using-mkdir">
+     Creating a sandbox directory using mkdir
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#mkdir-trys-to-create-the-same-dircetory-and-return-an-error">
+       mkdir trys to create the same dircetory and return an error
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#mkdir-options-allow-us-to-issue-more-advanced-commands">
+       mkdir options allow us to issue more advanced commands
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#mkdir-parent-gives-us-the-ability-to-form-filesystem-structures">
+       mkdir –parent gives us the ability to form filesystem structures
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#list-folder-structure">
+     list folder structure
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#removing-a-directory">
+     Removing a directory
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-rm-command">
+       The
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         rm
+        </span>
+       </code>
+       command
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#navigating-the-filesystem">
+     Navigating the filesystem
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#change-directory-cd">
+       Change Directory
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         CD
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#knowing-where-you-are">
+     Knowing where you are
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-would-we-want-to-use-the-terminal">
+   Why would we want to use the terminal
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#document-your-code">
+   Document your code
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hash-tag-add-comments-to-your-code">
+     Hash tag - add comments to your code
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deeper-dive-into-the-bash-syntax">
+   Deeper dive into the bash syntax
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#listing-all-folders-contents">
+     listing all folders contents
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#let-s-unpack-one-line-of-the-output-from-right-to-left">
+       Let’s unpack one line of the output from right to left
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#basics-of-permissions">
+     Basics of permissions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#changing-permissions">
+     Changing permissions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#file-system-navigation">
+   File system navigation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#knowing-how-to-go-home">
+     Knowing how to go home
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#advance-bash">
+   Advance Bash
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#alias">
+     Alias
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-content-in-the-terminal-old-school">
+     creating content in the terminal (Old-school)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#echo">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         echo
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#examples-using-echo">
+     Examples using
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       echo
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#examples-using-cat">
+     Examples using
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       cat
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cp-mv">
+     cp,mv -
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#examples">
+     Examples
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#echo-multiline-often-we-would-like-to-write-multi-line-files">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       echo
+      </span>
+      <span class="pre">
+       multiline
+      </span>
+     </code>
+     — Often we would like to write multi line files
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example">
+       Example
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-do-we-use-these">
+     How do we use these?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functions">
+   Functions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-the-concept-of-relative-path-we-can-create-our-first-generlised-bash-function">
+     Using the concept of relative path we can create our first generlised Bash function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#finally-let-s-create-a-useful-function-to-organise-your-projects-further">
+     Finally let’s create a useful function to organise your projects further
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#links-to-expand-your-understanding">
+   Links to expand your understanding
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Introduction to Linux Based Command Line Interactions</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-would-i-use-a-terminal">
+   Why would I use a Terminal
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic-terminology">
+   Basic terminology
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#graphical-user-interface-gui">
+     graphical user interface (GUI)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#command-line-interface-cli">
+     Command-line interface (CLI)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-shell-terminal">
+     The Shell/Terminal
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-bash">
+     What is Bash
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#context-and-practicalities">
+   Context and practicalities
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#opening-a-terminal-on-your-local-computer">
+     Opening a terminal on your local computer
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#command-prompt">
+     Command prompt
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#shell-commands-structure">
+     Shell Commands structure
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#commands">
+   Commands
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#use-ls-to-list-folder-contents">
+     Use
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ls
+      </span>
+     </code>
+     to list folder contents
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#managing-content-in-the-filesystem">
+     Managing Content in the Filesystem
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-a-sandbox-directory-using-mkdir">
+     Creating a sandbox directory using mkdir
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#mkdir-trys-to-create-the-same-dircetory-and-return-an-error">
+       mkdir trys to create the same dircetory and return an error
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#mkdir-options-allow-us-to-issue-more-advanced-commands">
+       mkdir options allow us to issue more advanced commands
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#mkdir-parent-gives-us-the-ability-to-form-filesystem-structures">
+       mkdir –parent gives us the ability to form filesystem structures
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#list-folder-structure">
+     list folder structure
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#removing-a-directory">
+     Removing a directory
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-rm-command">
+       The
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         rm
+        </span>
+       </code>
+       command
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#navigating-the-filesystem">
+     Navigating the filesystem
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#change-directory-cd">
+       Change Directory
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         CD
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#knowing-where-you-are">
+     Knowing where you are
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-would-we-want-to-use-the-terminal">
+   Why would we want to use the terminal
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#document-your-code">
+   Document your code
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hash-tag-add-comments-to-your-code">
+     Hash tag - add comments to your code
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deeper-dive-into-the-bash-syntax">
+   Deeper dive into the bash syntax
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#listing-all-folders-contents">
+     listing all folders contents
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#let-s-unpack-one-line-of-the-output-from-right-to-left">
+       Let’s unpack one line of the output from right to left
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#basics-of-permissions">
+     Basics of permissions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#changing-permissions">
+     Changing permissions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#file-system-navigation">
+   File system navigation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#knowing-how-to-go-home">
+     Knowing how to go home
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#advance-bash">
+   Advance Bash
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#alias">
+     Alias
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-content-in-the-terminal-old-school">
+     creating content in the terminal (Old-school)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#echo">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         echo
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#examples-using-echo">
+     Examples using
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       echo
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#examples-using-cat">
+     Examples using
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       cat
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cp-mv">
+     cp,mv -
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#examples">
+     Examples
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#echo-multiline-often-we-would-like-to-write-multi-line-files">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       echo
+      </span>
+      <span class="pre">
+       multiline
+      </span>
+     </code>
+     — Often we would like to write multi line files
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example">
+       Example
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-do-we-use-these">
+     How do we use these?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functions">
+   Functions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-the-concept-of-relative-path-we-can-create-our-first-generlised-bash-function">
+     Using the concept of relative path we can create our first generlised Bash function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#finally-let-s-create-a-useful-function-to-organise-your-projects-further">
+     Finally let’s create a useful function to organise your projects further
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#links-to-expand-your-understanding">
+   Links to expand your understanding
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="introduction-to-linux-based-command-line-interactions">
+<h1>Introduction to Linux Based Command Line Interactions<a class="headerlink" href="#introduction-to-linux-based-command-line-interactions" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="why-would-i-use-a-terminal">
+<h2>Why would I use a Terminal<a class="headerlink" href="#why-would-i-use-a-terminal" title="Permalink to this headline">¶</a></h2>
+<p>In the old days, independent devices, or so-called “hard copy terminals” (printer or screen plus keyboard), were used. Modern computers no longer have those, replaced by terminal emulators - programs that provide users with a graphical window for interacting with the shell. As scientists, we rely on powerful computer clusters to reveal answers to many questions and to perform many tasks automatically. There are many ways to interact with these computers. However, the fastest and most reliable way is the terminal emulators, which is the main focus of today’s session.</p>
+</div>
+<div class="section" id="basic-terminology">
+<h2>Basic terminology<a class="headerlink" href="#basic-terminology" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="graphical-user-interface-gui">
+<h3>graphical user interface (GUI)<a class="headerlink" href="#graphical-user-interface-gui" title="Permalink to this headline">¶</a></h3>
+<p>In its most basic form, all computers have some interaction to store, process, create data, take actions, and communicate with other computers and people. There are many ways to interact with the computer. However, the most common is the GUI, which uses a mix of windows, icons, mice, and pointers to perform various tasks. This user interface type makes it easier for users to navigate through and use hundreds of programs, often from within a complex hierarchy.</p>
+</div>
+<div class="section" id="command-line-interface-cli">
+<h3>Command-line interface (CLI)<a class="headerlink" href="#command-line-interface-cli" title="Permalink to this headline">¶</a></h3>
+<p>Under the hood, all computers have a command-line interface, or CLI, which distinguishes it from the more common GUI, which most people use nowadays. A CLI’s heart is a read-evaluate-print loop or REPL: when a user types a command and presses enter, the computer reads the command, runs the command, and prints out the output until the user breaks the cycle. One of the programs in charge of enabling this cycle is called a shell or terminal.</p>
+</div>
+<div class="section" id="the-shell-terminal">
+<h3>The Shell/Terminal<a class="headerlink" href="#the-shell-terminal" title="Permalink to this headline">¶</a></h3>
+<p>The shell is a program that serves as a keyboard-driven interface between the user and the operating system. It includes a command-line interpreter that accepts the user input via the keyboard, evaluates it, starts programs if necessary, and returns the output in the form of text output to the user. Each shell has its programming language, which makes it possible to write scripts that automate complex tasks. Each shell runs in a terminal.</p>
+</div>
+<div class="section" id="what-is-bash">
+<h3>What is Bash<a class="headerlink" href="#what-is-bash" title="Permalink to this headline">¶</a></h3>
+<p>One of the differences between a shell and any other program is that a shell runs other programs instead of doing calculations. One of the most popular Unix shells is Bash, named for the Bourne Again Shell (derived from a shell originally written by Stephen Bourne). In most modern Unix implementations and most packages designed for Windows, Bash is the default shell.</p>
+</div>
+</div>
+<div class="section" id="context-and-practicalities">
+<h2>Context and practicalities<a class="headerlink" href="#context-and-practicalities" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="opening-a-terminal-on-your-local-computer">
+<h3>Opening a terminal on your local computer<a class="headerlink" href="#opening-a-terminal-on-your-local-computer" title="Permalink to this headline">¶</a></h3>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Opening a terminal on your local computer <div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<ol class="simple">
+<li><p class="card-text">On macOS By clicking command+space and writing the word terminal spawn a terminal on your mac os</p></li>
+<li><p class="card-text">on Windows - I dont use windows so if anyone can tell me the shortcut that would be great</p></li>
+</ol>
+</div>
+</details></div>
+<div class="section" id="command-prompt">
+<h3>Command prompt<a class="headerlink" href="#command-prompt" title="Permalink to this headline">¶</a></h3>
+<p>Opening the terminal for the very first time, you will be presented with a prompt <code class="docutils literal notranslate"><span class="pre">$</span></code>, indicating that the shell is waiting for your input.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$
+</pre></div>
+</div>
+</div>
+<div class="section" id="shell-commands-structure">
+<h3>Shell Commands structure<a class="headerlink" href="#shell-commands-structure" title="Permalink to this headline">¶</a></h3>
+<p>You interact with the shell via commands, which can be used to execute CLI programs with names similar to the commands. For each action that you wish to perform using the terminal, you use a program call following this basic scheme:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Command <span class="o">[</span>options<span class="o">]</span> <span class="o">[</span>arguments<span class="o">]</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="commands">
+<h2>Commands<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="use-ls-to-list-folder-contents">
+<h3>Use <code class="docutils literal notranslate"><span class="pre">ls</span></code> to list folder contents<a class="headerlink" href="#use-ls-to-list-folder-contents" title="Permalink to this headline">¶</a></h3>
+<p>The first command we will use is <code class="docutils literal notranslate"><span class="pre">ls</span></code>, which displays the current directory contents. <br></p>
+<div class="admonition-challenge admonition">
+<p class="admonition-title">Challenge</p>
+<p>Type <code class="docutils literal notranslate"><span class="pre">ls</span></code> in your open terminal and press the <kbd>Enter</kbd> key to execute it.</p>
+</div>
+</div>
+<div class="section" id="managing-content-in-the-filesystem">
+<h3>Managing Content in the Filesystem<a class="headerlink" href="#managing-content-in-the-filesystem" title="Permalink to this headline">¶</a></h3>
+<p>The part of the operating system responsible for managing individual files and directories is called the <strong>file system</strong>. This part of the system categorizes our data into files or directories that contain files.</p>
+</div>
+<div class="section" id="creating-a-sandbox-directory-using-mkdir">
+<h3>Creating a sandbox directory using mkdir<a class="headerlink" href="#creating-a-sandbox-directory-using-mkdir" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-challenge admonition">
+<p class="admonition-title">Challenge</p>
+<p>Make a new directory by typing <code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">sandbox</span></code> in the prompt.
+Here, mkdir is the program name and sandbox is the argument, in this case the name of the directory we are creating.</p>
+</div>
+<div class="section" id="mkdir-trys-to-create-the-same-dircetory-and-return-an-error">
+<h4>mkdir trys to create the same dircetory and return an error<a class="headerlink" href="#mkdir-trys-to-create-the-same-dircetory-and-return-an-error" title="Permalink to this headline">¶</a></h4>
+<p>Type <code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">sandbox</span></code> again. Now the program returns an error.</p>
+<div class="admonition error">
+<p class="admonition-title">Error</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">mkdir sandbox  </span>
+<span class="go">mkdir: cannot create directory ‘sandbox’: File exists</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="mkdir-options-allow-us-to-issue-more-advanced-commands">
+<h4>mkdir options allow us to issue more advanced commands<a class="headerlink" href="#mkdir-options-allow-us-to-issue-more-advanced-commands" title="Permalink to this headline">¶</a></h4>
+<p>By adding the –help option, prints out the different options you can use to extend the mkdir program.</p>
+<div class="admonition-challenge admonition">
+<p class="admonition-title">Challenge</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Please type the following command in the prompt. <div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">mkdir --help</span>
+</pre></div>
+</div>
+</div>
+</details></div>
+</div>
+<div class="section" id="mkdir-parent-gives-us-the-ability-to-form-filesystem-structures">
+<h4>mkdir –parent gives us the ability to form filesystem structures<a class="headerlink" href="#mkdir-parent-gives-us-the-ability-to-form-filesystem-structures" title="Permalink to this headline">¶</a></h4>
+<p>By adding the -p (aka parent) option, the mkdir program will create a hierarchical folder structure.
+Please type the following command in the prompt.</p>
+<div class="admonition-challenge admonition">
+<p class="admonition-title">Challenge</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Please type the following command in the prompt.<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">mkdir -p sandbox/root/{dir_a,dir_b/{leaf_1,leaf_2},dir_c}</span>
+</pre></div>
+</div>
+</div>
+</details></div>
+</div>
+</div>
+<div class="section" id="list-folder-structure">
+<h3>list folder structure<a class="headerlink" href="#list-folder-structure" title="Permalink to this headline">¶</a></h3>
+<p>In order to confirm, we could use wildcards like <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">sandbox/*/*/*</span></code> where each astrix corresponds to a different level in the hierarchy folder we created. However, there is a good chance that one of the many options of the <code class="docutils literal notranslate"><span class="pre">ls</span></code> command might be able to solve this problem in a generic way.
+```{admonition} Try to use the <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">--help</span></code> to figure out what option is the most sutiable.</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Solution<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ls -R sandbox/</span>
+</pre></div>
+</div>
+</div>
+</details><p>Here we state the root folder to start listing from, and then use the recursive  option to list all subdirectories recursively to the prompt.</p>
+</div>
+<div class="section" id="removing-a-directory">
+<h3>Removing a directory<a class="headerlink" href="#removing-a-directory" title="Permalink to this headline">¶</a></h3>
+<p>If we add a folder, we should also have the ability to remove it, else we risk having a very messy file system.</p>
+<div class="section" id="the-rm-command">
+<h4>The <code class="docutils literal notranslate"><span class="pre">rm</span></code> command<a class="headerlink" href="#the-rm-command" title="Permalink to this headline">¶</a></h4>
+<p>If we try to use the <code class="docutils literal notranslate"><span class="pre">rm</span></code> command to remove the <code class="docutils literal notranslate"><span class="pre">sandbox/</span></code> folder we get an error.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">rm sandbox/</span>
+</pre></div>
+</div>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+One potential solution<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">rm -d sandbox/</span>
+</pre></div>
+</div>
+</div>
+</details><p>But this ends with an error also</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Real solution<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">The solution is to remove all the structure recursively (using the -r option), starting with the empty directories and moving upward in the hierarchy. We add the -f (force) option to handle directories that are not empty.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">rm -rf sandbox/</span>
+</pre></div>
+</div>
+</div>
+</details></div>
+</div>
+<div class="section" id="navigating-the-filesystem">
+<h3>Navigating the filesystem<a class="headerlink" href="#navigating-the-filesystem" title="Permalink to this headline">¶</a></h3>
+<p>To move to and view directories, files, and content, we need some basic navigation skills.</p>
+<div class="section" id="change-directory-cd">
+<h4>Change Directory  <code class="docutils literal notranslate"><span class="pre">CD</span></code><a class="headerlink" href="#change-directory-cd" title="Permalink to this headline">¶</a></h4>
+<p>Navigation is the most fundamental skill in any computer program. The Change Directory command provides us with capability to switch from one place to another. For example, we can go to the Data folder we just created by using the following command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cd sandbox/My_first_project/Data</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="knowing-where-you-are">
+<h3>Knowing where you are<a class="headerlink" href="#knowing-where-you-are" title="Permalink to this headline">¶</a></h3>
+<p>Another important thing is knowing where you are. The print working directory <code class="docutils literal notranslate"><span class="pre">pwd</span></code> will show you where you are currently located.
+Try to run the pwd command for yourself</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">pwd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="why-would-we-want-to-use-the-terminal">
+<h2>Why would we want to use the terminal<a class="headerlink" href="#why-would-we-want-to-use-the-terminal" title="Permalink to this headline">¶</a></h2>
+<p>Clearly, there is an elephant in the room… Why would I want to waste your time by teaching you this ancient interface.</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+My main reason<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">Lies in automation and standardization.
+If I know that the filesystem will look the same for every project I create, I can set up automatic processes that will take that into account. Look at the following line for example.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">mkdir -p sandbox/My_first_project/{Data/{pkl,csv,zip},Notebooks,Code,Tmp,Report/{Tables,Figures,Text,Background/{pdf,pptx},Presentation}}</span>
+<span class="go">ls -R sandbox/</span>
+</pre></div>
+</div>
+</div>
+</details></div>
+<div class="section" id="document-your-code">
+<h2>Document your code<a class="headerlink" href="#document-your-code" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="hash-tag-add-comments-to-your-code">
+<h3>Hash tag - add comments to your code<a class="headerlink" href="#hash-tag-add-comments-to-your-code" title="Permalink to this headline">¶</a></h3>
+<p>‘#’ the hash sign is used as the beginning of the comment in the script. In each line of the statement, the part starting with ‘#’ is not executed.</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Examples using ‘cd’ and ‘#’<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> / <span class="c1"># change directory to the root directory</span>
+<span class="nb">cd</span> ~ <span class="c1"># change directory to your home directory</span>
+<span class="nb">cd</span> ~/sandbox/My_first_project/Report <span class="c1"># goto Report dir</span>
+<span class="nb">cd</span> <span class="s2">&quot;dir name&quot;</span>
+<span class="c1"># if for some reason you created a folder name with spaces</span>
+<span class="c1"># (DONT!!!) this is how you call it</span>
+</pre></div>
+</div>
+</div>
+</details></div>
+</div>
+<div class="section" id="deeper-dive-into-the-bash-syntax">
+<h2>Deeper dive into the bash syntax<a class="headerlink" href="#deeper-dive-into-the-bash-syntax" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="listing-all-folders-contents">
+<h3>listing all folders contents<a class="headerlink" href="#listing-all-folders-contents" title="Permalink to this headline">¶</a></h3>
+<p>Recall that <code class="docutils literal notranslate"><span class="pre">ls</span></code> contains many options, among the most useful ones are <code class="docutils literal notranslate"><span class="pre">-a</span></code>  which stands for all and means that the command does not ignore entries starting with <code class="docutils literal notranslate"><span class="pre">.</span></code>. Another useful option is <code class="docutils literal notranslate"><span class="pre">-l</span></code> which tells the command to use a long listing format.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> sandbox/My_first_project/Data
+ls -al
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>drwxr-xr-x <span class="m">5</span> jovyan users <span class="m">4096</span> May <span class="m">13</span> <span class="m">14</span>:31 .
+drwxr-xr-x <span class="m">8</span> jovyan users <span class="m">4096</span> May <span class="m">13</span> <span class="m">14</span>:31 ..
+drwxr-xr-x <span class="m">2</span> jovyan users <span class="m">4096</span> May <span class="m">13</span> <span class="m">14</span>:31 csv
+drwxr-xr-x <span class="m">2</span> jovyan users <span class="m">4096</span> May <span class="m">13</span> <span class="m">14</span>:31 pkl
+drwxr-xr-x <span class="m">2</span> jovyan users <span class="m">4096</span> May <span class="m">13</span> <span class="m">14</span>:31 zip
+</pre></div>
+</div>
+<div class="section" id="let-s-unpack-one-line-of-the-output-from-right-to-left">
+<h4>Let’s unpack one line of the output from right to left<a class="headerlink" href="#let-s-unpack-one-line-of-the-output-from-right-to-left" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>Let’s unpack the bottom line from right to left</p></li>
+</ul>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p></p></th>
+<th class="text-align:left head"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">..</span></code></p></td>
+<td class="text-align:left"><p>file/folder name</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">May</span> <span class="pre">13</span> <span class="pre">14:31</span></code></p></td>
+<td class="text-align:left"><p>The <strong>last</strong> modification time</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">4096</span></code></p></td>
+<td class="text-align:left"><p>File size in bytes</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">users</span></code></p></td>
+<td class="text-align:left"><p>Group name</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">jovyan</span></code></p></td>
+<td class="text-align:left"><p>Owner name</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">8</span></code></p></td>
+<td class="text-align:left"><p>Number of links</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">drwxr-xr-x</span></code></p></td>
+<td class="text-align:left"><p>Permissions</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p></p></td>
+<td class="text-align:left"><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="basics-of-permissions">
+<h3>Basics of permissions<a class="headerlink" href="#basics-of-permissions" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Permission settings are grouped in a string of characters (-, r, w, x)</p></li>
+<li><p>The characters r, w, and x stand for <strong>read</strong>, <strong>write</strong>, and <strong>execute</strong>.
+classified into four sections:</p></li>
+<li><p><span style="color:DARKRED">-</span>rwxrwxrwx - File type has three possibilities:</p></li>
+<li><p>regular file (–)</p></li>
+<li><p>a directory (d)</p></li>
+<li><p>or a link (i)</p></li>
+<li><p>-<span style="color:DARKRED">rwx</span>rwxrwx - File permission of the user (owner)</p></li>
+<li><p>-rwx<span style="color:DARKRED">rwx</span>rwx - File permission of the owner’s group</p></li>
+<li><p>-rwxrwx<span style="color:DARKRED">rwx</span>- File permission of other users</p></li>
+</ul>
+</div>
+<div class="section" id="changing-permissions">
+<h3>Changing permissions<a class="headerlink" href="#changing-permissions" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Any Linux user, will at some point need to modify the permission settings of a file/directory.</p></li>
+<li><p>This can be done using the <code class="docutils literal notranslate"><span class="pre">chmod</span></code> command.</p></li>
+<li><p>The basic syntax is:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>chmod <span class="o">[</span>permission<span class="o">]</span> <span class="o">[</span>file_name<span class="o">]</span>
+<span class="c1"># one way that is the simplest to remember</span>
+chmod <span class="nv">u</span><span class="o">=</span>rwx,g<span class="o">=</span>rwx,o<span class="o">=</span>rwx <span class="o">[</span>file_name<span class="o">]</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>rwx stand for r(ead),w(rite) and (e)x(ecute)</p></li>
+<li><p>and ugo stand for u(ser), g(roup) and o(ther)</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="file-system-navigation">
+<h2>File system navigation<a class="headerlink" href="#file-system-navigation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="knowing-how-to-go-home">
+<h3>Knowing how to go home<a class="headerlink" href="#knowing-how-to-go-home" title="Permalink to this headline">¶</a></h3>
+<p>A program that tracks your location provides an opportunity to discuss the difference between <strong>relative</strong> and <strong>absolute</strong> locations. The <code class="docutils literal notranslate"><span class="pre">pwd</span></code> command returns the absolute path to where you are. The shell contains two important variables, both of which are subjective. The first is the environment variable <code class="docutils literal notranslate"><span class="pre">$PWD</span></code>, which specifies your current active location. The other is <code class="docutils literal notranslate"><span class="pre">$HOME</span></code>, which is the active user’s home folder. We can create our own variables in the shell to make navigation easier. When do you think this following code snippet can be useful?</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">ORIGIN</span><span class="o">=</span><span class="nv">$PWD</span>
+<span class="nb">cd</span> <span class="nv">$HOME</span>
+<span class="c1"># do stuff</span>
+<span class="nb">cd</span> <span class="nv">$ORIGIN</span>
+</pre></div>
+</div>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+My explenation<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">Here we create a variable named <code class="docutils literal notranslate"><span class="pre">ORIGIN</span></code> which represents our starting position, so we can go to other places, such as our home directory, run a program there, and eventually return to our origin.</p>
+</div>
+</details></div>
+</div>
+<div class="section" id="advance-bash">
+<h2>Advance Bash<a class="headerlink" href="#advance-bash" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="alias">
+<h3>Alias<a class="headerlink" href="#alias" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Shell aliases are used to reference a command.</p></li>
+<li><p>They can be used to avoid typing long commands or to correct incorrect input.</p></li>
+<li><p>It can reduce keystrokes for common patterns and increase efficiency.</p></li>
+<li><p>Consider using it for complex commands with frequently used options, or even simple commands with commonly used options.</p></li>
+<li><p>The format is simple and this is a good opertunity to share with you some cool examples of using ls</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">alias</span> <span class="nv">ls</span><span class="o">=</span><span class="s1">&#39;ls -h --color&#39;</span>
+<span class="nb">alias</span> <span class="nv">ll</span><span class="o">=</span><span class="s2">&quot;ls -lv --group-directories-first&quot;</span>
+<span class="nb">alias</span> <span class="nv">lm</span><span class="o">=</span><span class="s1">&#39;ll | more&#39;</span> <span class="c1"># Pipe through &#39;more&#39;</span>
+<span class="nb">alias</span> <span class="nv">lr</span><span class="o">=</span><span class="s1">&#39;ll -R&#39;</span> <span class="c1"># Recursive ls.</span>
+<span class="nb">alias</span> <span class="nv">la</span><span class="o">=</span><span class="s1">&#39;ll -A&#39;</span> <span class="c1"># Show hidden files.</span>
+<span class="nb">alias</span> <span class="nv">lx</span><span class="o">=</span><span class="s1">&#39;ll -XB&#39;</span> <span class="c1"># Sort by extension.</span>
+<span class="nb">alias</span> <span class="nv">lk</span><span class="o">=</span><span class="s1">&#39;ll -Sr | sr&#39;</span> <span class="c1"># Sort by size, biggest first.</span>
+<span class="nb">alias</span> <span class="nv">lt</span><span class="o">=</span><span class="s1">&#39;ll -tr | sr&#39;</span> <span class="c1"># Sort by date, most recent first.</span>
+<span class="nb">alias</span> <span class="c1"># list all current aliases</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="creating-content-in-the-terminal-old-school">
+<h3>creating content in the terminal (Old-school)<a class="headerlink" href="#creating-content-in-the-terminal-old-school" title="Permalink to this headline">¶</a></h3>
+<p>In the last section for this episode we will cover different ways to generate files via the terminal.</p>
+<div class="section" id="echo">
+<h4><code class="docutils literal notranslate"><span class="pre">echo</span></code><a class="headerlink" href="#echo" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>Prints text to the terminal window</p></li>
+<li><p>The most basic process in any programming language is the ability to output information.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">echo</span></code> command prints text to the terminal window and is typically used in shell scripts and batch files to output
+status text to the screen or a computer file.</p></li>
+<li><p>Echo is also particularly useful for showing the values of environmental variables, which tell the shell how to behave
+as a user works at the command line or in scripts.</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~/sandbox/My_first_project/Report 
+<span class="nb">echo</span> <span class="nv">$ORIGIN</span>
+<span class="nb">echo</span> <span class="nv">$HOME</span>
+<span class="nb">echo</span> <span class="nv">$PWD</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="examples-using-echo">
+<h3>Examples using <code class="docutils literal notranslate"><span class="pre">echo</span></code><a class="headerlink" href="#examples-using-echo" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> sandbox
+<span class="nb">echo</span> Some text to print out
+<span class="c1"># any string after the command will be printed</span>
+<span class="nb">echo</span> *
+<span class="c1"># Will Print all the files/folder using echo command</span>
+<span class="nb">echo</span> *.jpeg
+<span class="c1"># Will Print all the files of a specific kind</span>
+<span class="nb">echo</span> <span class="s2">&quot;Some text to add to a file&quot;</span> &gt; file.txt
+<span class="c1"># Use redirect operator to store output to a file</span>
+<span class="nb">echo</span> <span class="s2">&quot;Some other text to add to a file&quot;</span> &gt;&gt; file.txt
+<span class="c1"># Use redirect append operator &gt;&gt; to add output to file</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="examples-using-cat">
+<h3>Examples using <code class="docutils literal notranslate"><span class="pre">cat</span></code><a class="headerlink" href="#examples-using-cat" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat file.txt
+<span class="c1"># Displaying Contents of a File</span>
+cat file_2.txt
+<span class="c1"># Allows to write text interactively</span>
+cat file_2.txt &gt; file_1.txt
+<span class="c1"># It is possible to redirect to output like echo</span>
+<span class="c1"># However the above command overwrites the file contents</span>
+cat file.txt file_1.txt file_2.txt
+<span class="c1"># We can also view contents of multiple files</span>
+cat file_1.txt &gt;&gt; file.txt
+<span class="c1"># file_1 content will be appended at the end of file</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="cp-mv">
+<h3>cp,mv -<a class="headerlink" href="#cp-mv" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Copy, move or rename files and directories</p></li>
+<li><p>Using cp, you can copy a file, a group of files, or a directory. A file is copied as an exact copy with a different file name to a disk. It is necessary to pass at least two file names to cp.</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp <span class="o">[</span>OPTION<span class="o">]</span> Source Destination
+cp <span class="o">[</span>OPTION<span class="o">]</span> Source Directory
+cp <span class="o">[</span>OPTION<span class="o">]</span> Source-1 Source-2 Source-3 Source-n Directory
+</pre></div>
+</div>
+</div>
+<div class="section" id="examples">
+<h3>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~/sandbox <span class="c1"># make sure we are at sandbox</span>
+<span class="nv">output</span><span class="o">=</span>dir_root/dir_branch/dir_leaf
+<span class="c1"># make a variable to store path</span>
+mkdir -p <span class="nv">$output</span> <span class="c1"># varify that output exists and if not create it</span>
+mkdir -p dir_root/dir_branch2
+<span class="c1"># Create  another branch in dir_root</span>
+cp file <span class="nv">$output</span> <span class="c1"># copy file to path</span>
+mv file_1 <span class="nv">$output</span> <span class="c1"># move file_1 to output</span>
+ls <span class="nv">$output</span> <span class="c1"># list files in output</span>
+mv file <span class="nv">$output</span>/file_renamed
+<span class="c1"># move file to output and rename it</span>
+mkdir -p dir_1 dir_2
+mv -t dir_root/dir_branch2 dir_1 dir_2
+<span class="c1"># move folders to --target-directory (long form of -t)</span>
+cp -R dir_root/dir_branch2 <span class="nv">$output</span>
+<span class="c1"># recursively copy folder content to path</span>
+ls -FR <span class="nv">$output</span> <span class="c1"># list files in output again</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="echo-multiline-often-we-would-like-to-write-multi-line-files">
+<h3><code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">multiline</span></code> — Often we would like to write multi line files<a class="headerlink" href="#echo-multiline-often-we-would-like-to-write-multi-line-files" title="Permalink to this headline">¶</a></h3>
+<p>Here we read the contents of standard input, emit it to standard output, and makes a copy of it into the specified file(s) or variables.
+The purpose of this example is to create a <code class="docutils literal notranslate"><span class="pre">.bash_aliases</span></code> file containing all of your aliases and learn how to use more about the <code class="docutils literal notranslate"><span class="pre">echo</span></code> command.
+We understand what aliases are. However, it’s vital to comprehend that the aliases you create will only remain as long as the shell is open.
+Hence, it is useful to keep all aliases in one file.</p>
+<div class="section" id="example">
+<h4>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;</span>
+<span class="s2">alias ls=&#39;ls -h --color&#39;</span>
+<span class="s2">alias ll=&#39;ls -lv --group-directories-first&#39;</span>
+<span class="s2">alias lm=&#39;ll | more&#39; # Pipe through &#39;more&#39;</span>
+<span class="s2">alias lr=&#39;ll -R&#39; # Recursive ls.</span>
+<span class="s2">alias la=&#39;ll -A&#39; # Show hidden files.</span>
+<span class="s2">alias lx=&#39;ll -XB&#39; # Sort by extension.</span>
+<span class="s2">alias lk=&#39;ll -Sr | sr&#39; # Sort by size, biggest first.</span>
+<span class="s2">alias lt=&#39;ll -tr | sr&#39; # Sort by date, most recent first.</span>
+<span class="s2">&quot;</span> &gt;&gt; ~/.bash_aliases
+</pre></div>
+</div>
+<p>You can see we are using the &gt;&gt; argument, which appends the content into the filename. What might happen if we won’t use that option?</p>
+</div>
+</div>
+<div class="section" id="how-do-we-use-these">
+<h3>How do we use these?<a class="headerlink" href="#how-do-we-use-these" title="Permalink to this headline">¶</a></h3>
+<p>In bash we need to source a file to make its contents avaliable we do this using the command <code class="docutils literal notranslate"><span class="pre">source</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> ~/.bash_aliases
+</pre></div>
+</div>
+<p>we have now made all these aliases active and we can use them</p>
+</div>
+</div>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="using-the-concept-of-relative-path-we-can-create-our-first-generlised-bash-function">
+<h3>Using the concept of relative path we can create our first generlised Bash function<a class="headerlink" href="#using-the-concept-of-relative-path-we-can-create-our-first-generlised-bash-function" title="Permalink to this headline">¶</a></h3>
+<p>In bash we can pass arguments to a function, arguments are seperated by spaces and the first argument is always $1
+In bash there are protected symbols that in order to pass them we need to make the software ignore them we do this using what is called an escape sequence which is just a backslash in front of the symbol</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot; </span>
+<span class="s2">function mcd {</span>
+<span class="s2">    mkdir -p \$1</span>
+<span class="s2">    cd \$1</span>
+<span class="s2">}&quot;</span> &gt;&gt; functions.sh
+</pre></div>
+</div>
+<p>Here we are making a function called mcd which combines mkdir and cd into one unified process
+let’s test this function</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> functions.sh
+mcd my_new_folder
+<span class="nb">pwd</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="finally-let-s-create-a-useful-function-to-organise-your-projects-further">
+<h3>Finally let’s create a useful function to organise your projects further<a class="headerlink" href="#finally-let-s-create-a-useful-function-to-organise-your-projects-further" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot; </span>
+<span class="s2">function make_folder_structure {</span>
+<span class="s2">   echo Creating folder structure in \$1</span>
+<span class="s2">   mkdir -p \$1/{Notebooks,Code,Tmp,Data,Report,Presentation}</span>
+<span class="s2">   mkdir -p \$1/Data/{raw,processed,share}</span>
+<span class="s2">   mkdir -p \$1/Report/{Tables,Figures,Text}</span>
+<span class="s2">   mkdir -p \$1/Background/{pdf,pptx}</span>
+<span class="s2">   echo Dont forget to add README &gt; \$1/README.md}&quot;</span> &gt;&gt; functions.sh
+</pre></div>
+</div>
+<p>Try to explain what this function is doing</p>
+</div>
+</div>
+<div class="section" id="links-to-expand-your-understanding">
+<h2>Links to expand your understanding<a class="headerlink" href="#links-to-expand-your-understanding" title="Permalink to this headline">¶</a></h2>
+<p>While pursuing a PhD, you should always strive to refresh, clarify, and expand your knowledge. Here are some links to support you in that:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://learn.datacamp.com/courses/introduction-to-shell">introduction-to-shell</a></p></li>
+<li><p><a class="reference external" href="https://learn.datacamp.com/courses/introduction-to-bash-scripting">Introduction to Bash Scripting</a></p></li>
+<li><p><a class="reference external" href="https://ubuntu.com/tutorials/command-line-for-beginners#1-overview">command-line-for-beginners</a></p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./tutorials/session_01"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="overview.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Session 01 - basics</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="anaconda101.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Anaconda environment 101</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Eyal Soreq<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
