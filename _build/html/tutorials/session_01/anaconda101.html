@@ -345,6 +345,11 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-are-yml-yaml-files">
+     What are .yml/.yaml files
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#spawn-jupyter-to-see-if-all-the-hard-work-was-worth-it">
      Spawn Jupyter to see if all the hard work was worth it
     </a>
@@ -503,6 +508,11 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-are-yml-yaml-files">
+     What are .yml/.yaml files
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#spawn-jupyter-to-see-if-all-the-hard-work-was-worth-it">
      Spawn Jupyter to see if all the hard work was worth it
     </a>
@@ -529,7 +539,7 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>Basics<a class="headerlink" href="#basics" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="what-is-conda">
 <h3>What is Conda?<a class="headerlink" href="#what-is-conda" title="Permalink to this headline">¶</a></h3>
-<p>Conta is a package and environment manager based on Python. It assists in the development of reproducible analysis pipelines using crowd-sourced and version-controlled packages. It might be a bit confusing for an individual who is new to this type of approach. In order to make sure we all understand each other, let’s establish some quick vocabulary:</p>
+<p>Conda is a package and environment manager based on Python. It assists in the development of reproducible analysis pipelines using crowd-sourced and version-controlled packages. It might be a bit confusing for an individual who is new to this type of approach. In order to make sure we all understand each other, let’s establish some quick vocabulary:</p>
 </div>
 <div class="section" id="what-is-an-environment">
 <h3>What is an environment?<a class="headerlink" href="#what-is-an-environment" title="Permalink to this headline">¶</a></h3>
@@ -685,9 +695,13 @@ The following code registers the new environment we created and creates a folder
 </div>
 <div class="section" id="export-a-yml-snapshot-to-allow-you-to-recreate-the-setup-on-a-different-computer">
 <h3>Export a yml snapshot to allow you to recreate the setup on a different computer<a class="headerlink" href="#export-a-yml-snapshot-to-allow-you-to-recreate-the-setup-on-a-different-computer" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda env <span class="nb">export</span> --name basic &gt; <span class="nv">$PWD</span>/basic_env.yml
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda env <span class="nb">export</span> --name basic &gt; <span class="nv">$PWD</span>/basic_env.yaml
 </pre></div>
 </div>
+</div>
+<div class="section" id="what-are-yml-yaml-files">
+<h3>What are .yml/.yaml files<a class="headerlink" href="#what-are-yml-yaml-files" title="Permalink to this headline">¶</a></h3>
+<p>Configuration files are often written in YAML, a language for serialising data. You can find YAML as yet another markup language or as <a class="reference external" href="https://en.wikipedia.org/wiki/YAML">(YAML)</a> ain’t markup language (a recursive acronym), emphasising that YAML is for data, not documents. Simply put, .yaml files are a simple format for bridging the gap between humans and computers by creating data files that are easy to read and use.</p>
 </div>
 <div class="section" id="spawn-jupyter-to-see-if-all-the-hard-work-was-worth-it">
 <h3>Spawn Jupyter to see if all the hard work was worth it<a class="headerlink" href="#spawn-jupyter-to-see-if-all-the-hard-work-was-worth-it" title="Permalink to this headline">¶</a></h3>

@@ -5,7 +5,7 @@
 # 
 # ## Basics
 # ### What is Conda?
-# Conta is a package and environment manager based on Python. It assists in the development of reproducible analysis pipelines using crowd-sourced and version-controlled packages. It might be a bit confusing for an individual who is new to this type of approach. In order to make sure we all understand each other, let's establish some quick vocabulary:
+# Conda is a package and environment manager based on Python. It assists in the development of reproducible analysis pipelines using crowd-sourced and version-controlled packages. It might be a bit confusing for an individual who is new to this type of approach. In order to make sure we all understand each other, let's establish some quick vocabulary:
 # 
 # ### What is an environment?
 # 
@@ -161,8 +161,13 @@
 # ### Export a yml snapshot to allow you to recreate the setup on a different computer 
 # 
 # ```{code-block} bash
-# conda env export --name basic > $PWD/basic_env.yml
+# conda env export --name basic > $PWD/basic_env.yaml
 # ```
+# 
+# ### What are .yml/.yaml files 
+# 
+# Configuration files are often written in YAML, a language for serialising data. You can find YAML as yet another markup language or as [(YAML)](https://en.wikipedia.org/wiki/YAML) ain't markup language (a recursive acronym), emphasising that YAML is for data, not documents. Simply put, .yaml files are a simple format for bridging the gap between humans and computers by creating data files that are easy to read and use.
+# 
 # 
 # ### Spawn Jupyter to see if all the hard work was worth it 
 # 
